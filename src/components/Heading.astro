@@ -1,20 +1,19 @@
 ---
-// Henter parametrene fra Astro.props
-const { htmlheading="h2", size="medium", font="sans", stylingclasses=""} = Astro.props; 
-const Htmlheading = htmlheading;
- 
-//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
+// Astro.props: kun style
+const { style = "h2", stylingclasses = "" } = Astro.props;
+
+// style bestemmer både HTML-tag og Tailwind-classes
 const sizeClasses = {
-"large": "text-3xl lg:text-6xl",
-"medium": "text-2xl lg:text-3xl",
-"small": "text-xl",
+  h1: "text-[100px] md:text-[210px] font-display uppercase",
+  h2: "text-[64px] md:text-[150px] font-display uppercase",
+  h3: "text-[30px] md:text-[64px] font-sans",
+  h4: "text-[25px] md:text-[48px] font-sans",
+  cta: "text-[22px] md:text-[30px] font-sans uppercase",
 };
 
-//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige skrifttyper.
-const fontClasses = {
-"display": "font-display",
-"sans": "font-sans",
-"serif": "font-serif",
-};
+const Htmlheading = style; // HTML-tag følger style
 ---
-<Htmlheading class:list={[stylingclasses, sizeClasses[size], fontClasses[font]]}><slot /></Htmlheading>
+
+<Htmlheading class:list={[sizeClasses[style], stylingclasses]}>
+  <slot />
+</Htmlheading>
