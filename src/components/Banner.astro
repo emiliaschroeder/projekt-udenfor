@@ -1,0 +1,21 @@
+---
+import Heading from "./Heading.astro";
+import Button from "./Button.astro";
+---
+
+<section class="bg-secondary text-white">
+  <div class="align-center px-14 py-8 md:pr-180 md:pl-30 md:pt-15 md:pb-0">
+    <Heading style="h4"><slot /></Heading>
+  </div>
+
+  <div
+    class="flex justify-end items-center pb-10 px-12 gap-7 -mt-0 md:-mt-17 md:pb-15 md:gap-100"
+  >
+    <img
+      src="/img/arrow_white.svg"
+      alt="white arrow"
+      class="w-18 h-3 md:w-56 md:h-8"
+    />
+    <Button variant="onred">donér</Button>
+  </div>
+</section>
