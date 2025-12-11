@@ -33,6 +33,29 @@
   --font-display: "Barriecito", system-ui;
   --font-sans: "Neue Montreal Regular", sans-serif;
   --font-sans-bold: "Neue Montreal Bold", sans-serif;
+
+  /* Shadow */
+  --shadow-offset-xs: -3px 3px 0 0; /* Knapper mobil */
+  --shadow-offset-sm: -5px 5px 0 0; /* Knapper menu */
+  --shadow-offset-md: -10px 10px 0 0; /* Knapper desk + index historie-card mobil */
+  --shadow-offset-lg: -17px 17px 0 0; /* pop-up */
+  --shadow-offset-xl: -26px 26px 0 0; /* index historie-card desk */
+
+  /* Desktop spacing tokens */
+  --space-desk-xs: 14px;
+  --space-desk-sm: 28px;
+  --space-desk-md: 36px;
+  --space-desk-lg: 48px;
+  --space-desk-xl: 80px;
+  --space-desk-xxl: 96px;
+
+  /* Mobile spacing tokens */
+  --space-mob-xxs: 2px;
+  --space-mob-sm: 8px;
+  --space-mob-md: 14px;
+  --space-mob-lg: 20px;
+  --space-mob-xl: 24px;
+  --space-mob-xxl: 56px;
 }
 
 @layer base {
