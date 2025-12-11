@@ -7,6 +7,7 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import HistorieCard from "../components/HistorieCard.astro";
+import Banner from "../components/Banner.astro";
 ---
 
 <MainLayout title="Titel">
@@ -28,5 +29,13 @@ import HistorieCard from "../components/HistorieCard.astro";
       </div>
     </section>
     <!-- Slut ScrollBar -->
+    <!-- Start Banner -->
+    <div class="col-span-full md:col-span-12">
+      <Banner
+        >Godt en tredjedel af alle borgere i hjemløshed er unge mellem 18 og 29
+        år.</Banner
+      >
+    </div>
+    <!-- Slut Banner -->
   </main>
 </MainLayout>
