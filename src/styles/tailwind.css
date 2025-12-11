@@ -6,18 +6,17 @@
 @import "tailwindcss-intersect";
 
 @font-face {
-  font-family: "Honk";
-  src: url("/fonts/Honk-Regular-VariableFont_MORF,SHLN.ttf") format("truetype");
+  font-family: "Neue Montreal Regular";
+  src: url("/fonts/NeueMontreal-Regular.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Quicksand";
-  src: url("/fonts/Quicksand-VariableFont_wght.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Domine";
-  src: url("/fonts/Domine-Regular.ttf") format("truetype");
+  font-family: "Neue Montreal Bold";
+  src: url("/fonts/NeueMontreal-Bold.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
 }
 
 @theme {
@@ -32,8 +31,8 @@
 
   /*Typografi */
   --font-display: "Barriecito", system-ui;
-  --font-sans: "Quicksand", sans-serif;
-  --font-serif: "Domine", serif;
+  --font-sans: "Neue Montreal Regular", sans-serif;
+  --font-sans-bold: "Neue Montreal Bold", sans-serif;
 }
 
 @layer base {
