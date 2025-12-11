@@ -1,0 +1,19 @@
+---
+const { title, img, alt_tekst } = Astro.props;
+---
+
+<div class="relative flex-shrink-0">
+  <img
+    src={img}
+    alt={alt_tekst ?? title}
+    class="object-cover shadow-[var(--shadow-offset-md)_var(--color-secondary)] md:shadow-[var(--shadow-offset-xl)_var(--color-secondary)] w-96 h-40 md:w-[929px] md:h-96"
+  />
+  <!-- Titel -->
+  <div
+    class="absolute bottom-0 left-3 md:left-4 leading-none my-2 md:my-3 text-white uppercase"
+  >
+    <h5 class="text-[48px] md:text-[128px] font-sans uppercase">
+      {title}
+    </h5>
+  </div>
+</div>
