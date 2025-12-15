@@ -1,0 +1,30 @@
+---
+const { title, img, alt_tekst, number, job, mail } = Astro.props;
+
+import Text from "./Text.astro";
+import Link from "./Link.astro";
+---
+
+<div class="mb-[var(--space-mob-xxl)]">
+  <!-- Card: billede start -->
+  <img
+    src={img}
+    alt={alt_tekst ?? title}
+    class="w-full object-cover mb-[var(--space-mob-sm)] self-stretch h-72 md:h-96 md:mb-[var(--space-desk-xs)]"
+  />
+  <!-- Card: billede slut -->
+
+  <!-- Card: navn + job start -->
+  <Text style="p" stylingclasses="text-secondary font-sans-bold"> {title}</Text>
+  <Text style="p" stylingclasses="text-secondary mb-[var(--space-mob-sm)] ">
+    {job}</Text
+  >
+  <!-- Card: navn + job slut -->
+
+  <!-- Card: kontakt start -->
+  <div class="flex flex-col gap-[var(--space-mob-xxs)]">
+    <Link href={`mailto:${mail}`} variant="textlink">{mail}</Link>
+    <Link href={`tel:${number}`} variant="textlink">tlf: {number}</Link>
+  </div>
+  <!-- Card: kontakt slut -->
+</div>
