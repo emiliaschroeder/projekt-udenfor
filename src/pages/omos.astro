@@ -1,0 +1,38 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Footer from "../components/Footer.astro";
+import Link from "../components/Link.astro";
+import Button from "../components/Button.astro";
+import PersonCard from "../components/PersonCard.astro";
+---
+
+<MainLayout title="Om os">
+  <main>
+    <section class="grid grid-cols-6 md:grid-cols-12">
+      <div class="col-start-2 col-span-4 md:col-start-2 md:col-span-3">
+        <PersonCard
+          title="Fiede Fries"
+          img="/img/anette.png"
+          alt_tekst="Billede af Fiede Fries"
+          job="Projektleder"
+          mail="mailto:bj@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <PersonCard
+          title="Fiede Fries"
+          img="/img/anette.png"
+          alt_tekst="Billede af Fiede Fries"
+          job="Projektleder"
+          mail="mailto:bj@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+      </div>
+    </section>
+  </main></MainLayout
+>
