@@ -4,18 +4,21 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 import Form from "../components/Form.astro";
+import TextBox from "../components/TextBox.astro";
 ---
 
 <MainLayout title="Støt">
   <main class="grid grid-cols-6 md:grid-cols-12">
-    <!-- HERO -->
+    <!-- Start hero -->
     <section class="col-span-full bg-primary">
       <div
         class="col-span-full px-[var(--space-mob-md)] md:px-0 md:col-start-2 md:col-span-10"
       >
         <div class="grid grid-cols-6 md:grid-cols-12 items-end md:pl-10">
           <!-- Tekst -->
-          <div class="col-span-full md:col-span-7 text-secondary">
+          <div
+            class="col-span-full md:col-span-7 text-secondary leading-tight pt-5 md:pt-10"
+          >
             <Heading style="h2">STØT VORES ARBEJDE</Heading>
           </div>
         </div>
@@ -27,20 +30,21 @@ import Form from "../components/Form.astro";
         <img
           src="/img/liggende_cutout_sand.svg"
           alt="Person der sover på gaden"
-          class="w-full md:w-[800px] pl-10 md:pl-0 md:mt-[-200px]"
+          class="w-full md:w-[800px] pl-10 md:pl-0 md:mt-[-170px]"
         />
       </div>
     </section>
+    <!-- Slut hero -->
 
-    <!-- INDHOLD (rød baggrund + form) -->
-    <section class="col-span-full bg-secondary mt-[-40px]">
+    <!-- Start indhold + form -->
+    <section class="col-span-full bg-secondary mt-[-30px] md:mt-[-70px]">
       <div
         class="col-start-2 col-span-4 md:col-start-2 md:col-span-9 py-[var(--space-mob-xxl)] md:py-[var(--space-desk-xl)]"
       >
         <div
           class="grid grid-cols-6 md:grid-cols-12 gap-[var(--space-mob-xxl)] md:gap-[var(--space-desk-xl)]"
         >
-          <!-- VENSTRE KOLONNE (rød) -->
+          <!-- Venstre kolonne -->
           <section
             class="col-start-2 col-span-4 md:col-start-2 md:col-span-5 text-primary"
           >
@@ -48,7 +52,11 @@ import Form from "../components/Form.astro";
               >Hjælp os med at <br />forbedre vilkårene</Heading
             >
 
-            <Text style="p" class="mt-[var(--space-mob-lg)]">
+            <Text
+              style="p"
+              stylingclasses="text-white"
+              class="mt-[var(--space-mob-lg)]"
+            >
               I Projekt Udenfor er vi afhængige af private og offentlige bidrag
               for at kunne forbedre vilkårene for personer i gadehjemløshed.
             </Text>
@@ -76,7 +84,7 @@ import Form from "../components/Form.astro";
             </Heading>
 
             <div class="mt-[var(--space-mob-lg)] md:mt-[var(--space-desk-sm)]">
-              <Text style="p">
+              <Text style="p" stylingclasses="text-white">
                 Du kan hjælpe os med at forbedre forholdene for hjemløse
                 borgere, som lever på gaden. Lige nu sender vi dig to
                 digtsamlinger skrevet af mennesker med hjemløshedserfaring som
@@ -86,7 +94,7 @@ import Form from "../components/Form.astro";
             </div>
           </section>
 
-          <!-- HØJRE KOLONNE (form på sand) -->
+          <!-- Højre kolonne (form) -->
           <aside
             class="col-span-full md:col-start-7 md:col-span-6 px-5 md:px-0"
           >
@@ -95,6 +103,7 @@ import Form from "../components/Form.astro";
             >
               <Form />
             </div>
+
             <!-- Persondata -->
             <div
               class="gap-[var(--space-mob-sm)] md:gap-[var(--space-desk-sm)] mt-[var(--space-mob-xxl)] md:mt-[var(--space-desk-xl)] text-white"
@@ -117,92 +126,65 @@ import Form from "../components/Form.astro";
         </div>
       </div>
     </section>
-    <section class="col-span-full bg-primary">
-      <div
-        class="grid grid-cols-6 md:grid-cols-12
-           px-[var(--space-mob-md)] md:px-0"
-      >
-        <div class="col-span-full md:col-start-2 md:col-span-10">
-          <div
-            class="grid grid-cols-6 md:grid-cols-12
-               gap-[var(--space-mob-xxl)] md:gap-[var(--space-desk-xl)]
-               py-[var(--space-mob-xxl)] md:py-[var(--space-desk-xl)]"
-          >
-            <!-- TEKST + LISTE -->
-            <div class="col-span-full md:col-span-6 text-black">
-              <Heading style="h4">Din donation går til :</Heading>
+    <!-- Start indhold + form -->
 
-              <ul
-                class="mt-[var(--space-mob-xl)] md:mt-[var(--space-desk-lg)]
-                   space-y-[var(--space-mob-xl)] md:space-y-[var(--space-desk-md)]"
-              >
-                <li class="flex items-start gap-[var(--space-mob-lg)]">
-                  <img
-                    src="/img/arrow_black.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="mt-1 w-8 shrink-0"
-                  />
-                  <div>
-                    <Text style="pEm">Livsfornødenheder</Text>
-                    <Text style="p">som telte, liggeunderlag og mad.</Text>
-                  </div>
-                </li>
-
-                <li class="flex items-start gap-[var(--space-mob-lg)]">
-                  <img
-                    src="/img/arrow_black.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="mt-1 w-8 shrink-0"
-                  />
-                  <div>
-                    <Text style="pEm"
-                      >Akut hjælp og midlertidige overnatninger</Text
-                    >
-                    <Text style="p">i nødsituationer.</Text>
-                  </div>
-                </li>
-
-                <li class="flex items-start gap-[var(--space-mob-lg)]">
-                  <img
-                    src="/img/arrow_black.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="mt-1 w-8 shrink-0"
-                  />
-                  <div>
-                    <Text style="pEm">Aktiviteter og små oplevelser</Text>
-                    <Text style="p">der giver livskvalitet og nærvær.</Text>
-                  </div>
-                </li>
-
-                <li class="flex items-start gap-[var(--space-mob-lg)]">
-                  <img
-                    src="/img/arrow_black.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="mt-1 w-8 shrink-0"
-                  />
-                  <div>
-                    <Text style="pEm">Opsøgende gadeplansarbejde</Text>
-                    <Text style="p">direkte på gaden.</Text>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <!-- BILLEDE -->
-            <figure class="col-span-full md:col-span-6 md:flex md:justify-end">
-              <img
-                src="/public/img/måltid.png"
-                alt="Et måltid bliver rakt frem"
-                class="w-full md:max-w-[520px] mix-blend-luminosity"
-              />
-            </figure>
+    <!-- Start Tekst -->
+    <section class="col-start-2 col-span-4 md:col-start-2 md:col-span-10">
+      <section class="md:grid md:grid-cols-12">
+        <div class="md:col-start-1">
+          <TextBox
+            sectionTitle="Andre donationer"
+            body="Ønsker du at donere naturalier til Projekt Udenfor, så kontakt os på info@udenfor.dk eller 33427600. Hvis vi af den ene eller anden årsag ikke er den rette modtager af donationen, kan vi måske guide dig til et andet sted, der kunne drage nytte af dit overskud."
+          />
+        </div>
+        <div class="md:col-start-1 md:col-span-full md:grid md:grid-cols-5">
+          <div class="md:col-start-1 md:col-span-2">
+            <img
+              src="/img/gave.png"
+              alt=""
+              class="w-full md:w-96 md:h-[604px] pb-[var(--space-mob-xxl)] md:pb-[var(--space-desk-xl)]"
+            />
+          </div>
+          <div class="md:col-start-3 md:col-span-3">
+            <TextBox
+              sectionSubtitle="Donér din fødselsdag"
+              body="Lejlighedsvis - og til stor glæde og gavn på gaden - oplever vi, at privatpersoner vælger at bede deres fødselsdags-, bryllups-, eller receptionsgæster om et bidrag til vores arbejde, fremfor at købe gaver, vin eller blomster. Kunne du tænke dig at lade overskuddet fra din begivenhed gå til et godt formål, er du velkommen til at kontakte os på info@udenfor.dk"
+            />
+            <TextBox
+              sectionSubtitle="Gratis testamente"
+              body="Projekt Udenfors arbejde med viden og formidling har til formål at sikre opmærksomhed på gadehjemløshed, påvirke den offentlige debat på hjemløseområdet og sikre at holdninger, handlinger og indsatser overfor målgruppen tager form på et nuanceret og oplyst grundlag."
+              buttonText="Opret"
+            />
           </div>
         </div>
-      </div>
+
+        <div class="md:col-start-1 md:col-span-full md:grid md:grid-cols-5">
+          <div class="md:col-start-1 md:col-span-2">
+            <img
+              src="/img/frivillig.png"
+              alt=""
+              class="w-full md:w-96 md:h-[604px] pb-[var(--space-mob-xxl)] md:pb-[var(--space-desk-xl)]"
+            />
+          </div>
+          <div class="md:col-start-3 md:col-span-3">
+            <div>
+              <TextBox
+                sectionSubtitle="Frivilligt arbejde"
+                body="Du kan også støtte vores arbejde ved at engagere dig som frivillig i Den Mobile Café."
+                buttonText="Læs mere"
+              />
+            </div>
+            <div>
+              <TextBox
+                sectionSubtitle="Bliv klogere og del"
+                body="Du kan understøtte vores arbejde ved at følge os på vores sociale medier og dele vores indlæg i dit netværk. Du finder os på Facebook, Instagram og LinkedIn, ligesom du kan tilmelde dig vores nyhedsbrev her."
+              />
+            </div>
+            <TextBox sectionSubtitle="Tak for din støtte!" />
+          </div>
+        </div>
+      </section>
     </section>
-  </main></MainLayout
->
+    <!-- Slut Tekst -->
+  </main>
+</MainLayout>
