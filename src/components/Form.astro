@@ -5,13 +5,12 @@ import Button from "./Button.astro";
 
 <form
   x-data="{
-    // radio-style valg (kan ikke slås fra igen – kun skiftes)
     type: 'fast',
     frequency: 'maanedligt',
     amountPreset: '200',
     payment: 'mobilepay'
   }"
-  class="w-full bg-primary p-[var(--space-mob-xl)] md:p-[var(--space-desk-lg)]"
+  class="w-full bg-primary p-0"
 >
   <!-- Vælg type af bidrag -->
   <div class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)]">

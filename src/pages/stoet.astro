@@ -3,38 +3,206 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
-import Button from "../components/Button.astro";
-import PopUp from "../components/PopUp.astro";
 import Form from "../components/Form.astro";
 ---
 
-<MainLayout title="Titel">
-  <main class="container mx-auto p-4">
-    <Heading style="h2">Støt vores arbejde</Heading>
-    <img src="/public/img/liggende_cutout_sand.svg" alt="hjemløs" />
-    <Heading style="h4">Hjælp os med at forbedre vilkårene</Heading>
-    <Text style="p">
-      I Projekt Udenfor er vi afhængige af private og offentlige bidrag for at
-      kunne forbedre vilkårene for personer i gadehjemløshed. Heading
-      style="h4">Hjælp os med at forbedre vilkårene</Text
-    >
-    <Heading style="h4">Støt og modtag 2 gratis digtsamlinger</Heading>
+<MainLayout title="Støt">
+  <main class="grid grid-cols-6 md:grid-cols-12">
+    <!-- HERO -->
+    <section class="col-span-full bg-primary">
+      <div
+        class="col-span-full px-[var(--space-mob-md)] md:px-0 md:col-start-2 md:col-span-10"
+      >
+        <div class="grid grid-cols-6 md:grid-cols-12 items-end md:pl-10">
+          <!-- Tekst -->
+          <div class="col-span-full md:col-span-7 text-secondary">
+            <Heading style="h2">STØT VORES ARBEJDE</Heading>
+          </div>
+        </div>
+      </div>
+      <!-- Billede -->
+      <div
+        class="col-span-full md:col-start-4 md:flex md:justify-end relative z-10 md:z-30"
+      >
+        <img
+          src="/img/liggende_cutout_sand.svg"
+          alt="Person der sover på gaden"
+          class="w-full md:w-[800px] pl-10 md:pl-0 md:mt-[-200px]"
+        />
+      </div>
+    </section>
 
-    <Text style="p">
-      Du kan hjælpe os med at forbedre forholdene for hjemløse borgere, som
-      lever på gaden. Lige nu sender vi dig to digtsamlinger skrevet af
-      mennesker med hjemløshedserfaring som tak for en donation på 200 kroner.
-      Mobilepay dem på 345 203 med teksten ”digt”, og skriv adressen i en mail
-      på info@udenfor.dk
-    </Text>
-    <img src="/public/img/digt_1.png" alt="Fiasko digtsamling" />
-    <img src="/public/img/digt_2.png" alt="Dejlig deprimeret digtsamling" />
-    <Form />
+    <!-- INDHOLD (rød baggrund + form) -->
+    <section class="col-span-full bg-secondary mt-[-40px]">
+      <div
+        class="col-start-2 col-span-4 md:col-start-2 md:col-span-9 py-[var(--space-mob-xxl)] md:py-[var(--space-desk-xl)]"
+      >
+        <div
+          class="grid grid-cols-6 md:grid-cols-12 gap-[var(--space-mob-xxl)] md:gap-[var(--space-desk-xl)]"
+        >
+          <!-- VENSTRE KOLONNE (rød) -->
+          <section
+            class="col-start-2 col-span-4 md:col-start-2 md:col-span-5 text-primary"
+          >
+            <Heading style="h4"
+              >Hjælp os med at <br />forbedre vilkårene</Heading
+            >
 
-    <Text style="p-small">Persondata </Text>
-    <Text style="p-small"
-      >Hos Projekt Udenfor behandler vi dine personoplysninger i henhold til
-      EU's Databeskyttelsesforordning og den danske Databeskyttelseslov.
-    </Text>
-  </main>
-</MainLayout>
+            <Text style="p" class="mt-[var(--space-mob-lg)]">
+              I Projekt Udenfor er vi afhængige af private og offentlige bidrag
+              for at kunne forbedre vilkårene for personer i gadehjemløshed.
+            </Text>
+
+            <!-- Digtsamlinger -->
+            <div
+              class="my-[var(--space-mob-xl)] md:mt-[var(--space-desk-lg)] grid grid-cols-2 gap-[var(--space-mob-lg)] md:gap-[var(--space-desk-sm)]"
+            >
+              <img
+                src="/img/digt_1.png"
+                alt="Fiasko digtsamling"
+                class="w-full h-550px"
+              />
+              <img
+                src="/img/digt_2.png"
+                alt="Dejlig deprimeret digtsamling"
+                class="w-full h-550px"
+              />
+            </div>
+            <Heading
+              style="h4"
+              class="mt-[var(--space-mob-xxl)] md:mt-[var(--space-desk-lg)]"
+            >
+              Støt og modtag 2 gratis digtsamlinger
+            </Heading>
+
+            <div class="mt-[var(--space-mob-lg)] md:mt-[var(--space-desk-sm)]">
+              <Text style="p">
+                Du kan hjælpe os med at forbedre forholdene for hjemløse
+                borgere, som lever på gaden. Lige nu sender vi dig to
+                digtsamlinger skrevet af mennesker med hjemløshedserfaring som
+                tak for en donation på 200 kroner. MobilePay dem på 345 203 med
+                teksten “digt”, og skriv adressen i en mail på info@udenfor.dk
+              </Text>
+            </div>
+          </section>
+
+          <!-- HØJRE KOLONNE (form på sand) -->
+          <aside
+            class="col-span-full md:col-start-7 md:col-span-6 px-5 md:px-0"
+          >
+            <div
+              class="bg-primary px-[var(--space-mob-md)] py-[28px] md:p-[var(--space-desk-lg)] md:mt-[120px]"
+            >
+              <Form />
+            </div>
+            <!-- Persondata -->
+            <div
+              class="gap-[var(--space-mob-sm)] md:gap-[var(--space-desk-sm)] mt-[var(--space-mob-xxl)] md:mt-[var(--space-desk-xl)] text-white"
+            >
+              <Text style="p">Persondata</Text>
+
+              <Text style="p-small">
+                Hos Projekt Udenfor behandler vi dine personoplysninger i
+                henhold til EU's Databeskyttelsesforordning og den danske
+                Databeskyttelseslov.
+              </Text>
+
+              <Link variant="primary" href="#"
+                >Læs vores persondatapolitik her</Link
+              >
+              <br />
+              <Link variant="primary" href="#">Læs vores betingelser her</Link>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section class="col-span-full bg-primary">
+      <div
+        class="grid grid-cols-6 md:grid-cols-12
+           px-[var(--space-mob-md)] md:px-0"
+      >
+        <div class="col-span-full md:col-start-2 md:col-span-10">
+          <div
+            class="grid grid-cols-6 md:grid-cols-12
+               gap-[var(--space-mob-xxl)] md:gap-[var(--space-desk-xl)]
+               py-[var(--space-mob-xxl)] md:py-[var(--space-desk-xl)]"
+          >
+            <!-- TEKST + LISTE -->
+            <div class="col-span-full md:col-span-6 text-black">
+              <Heading style="h4">Din donation går til :</Heading>
+
+              <ul
+                class="mt-[var(--space-mob-xl)] md:mt-[var(--space-desk-lg)]
+                   space-y-[var(--space-mob-xl)] md:space-y-[var(--space-desk-md)]"
+              >
+                <li class="flex items-start gap-[var(--space-mob-lg)]">
+                  <img
+                    src="/img/arrow_black.svg"
+                    alt=""
+                    aria-hidden="true"
+                    class="mt-1 w-8 shrink-0"
+                  />
+                  <div>
+                    <Text style="pEm">Livsfornødenheder</Text>
+                    <Text style="p">som telte, liggeunderlag og mad.</Text>
+                  </div>
+                </li>
+
+                <li class="flex items-start gap-[var(--space-mob-lg)]">
+                  <img
+                    src="/img/arrow_black.svg"
+                    alt=""
+                    aria-hidden="true"
+                    class="mt-1 w-8 shrink-0"
+                  />
+                  <div>
+                    <Text style="pEm"
+                      >Akut hjælp og midlertidige overnatninger</Text
+                    >
+                    <Text style="p">i nødsituationer.</Text>
+                  </div>
+                </li>
+
+                <li class="flex items-start gap-[var(--space-mob-lg)]">
+                  <img
+                    src="/img/arrow_black.svg"
+                    alt=""
+                    aria-hidden="true"
+                    class="mt-1 w-8 shrink-0"
+                  />
+                  <div>
+                    <Text style="pEm">Aktiviteter og små oplevelser</Text>
+                    <Text style="p">der giver livskvalitet og nærvær.</Text>
+                  </div>
+                </li>
+
+                <li class="flex items-start gap-[var(--space-mob-lg)]">
+                  <img
+                    src="/img/arrow_black.svg"
+                    alt=""
+                    aria-hidden="true"
+                    class="mt-1 w-8 shrink-0"
+                  />
+                  <div>
+                    <Text style="pEm">Opsøgende gadeplansarbejde</Text>
+                    <Text style="p">direkte på gaden.</Text>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- BILLEDE -->
+            <figure class="col-span-full md:col-span-6 md:flex md:justify-end">
+              <img
+                src="/public/img/måltid.png"
+                alt="Et måltid bliver rakt frem"
+                class="w-full md:max-w-[520px] mix-blend-luminosity"
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main></MainLayout
+>
