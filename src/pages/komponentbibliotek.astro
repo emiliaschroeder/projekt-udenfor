@@ -4,8 +4,7 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
+import PopUp from "../components/PopUp.astro";
 ---
 
 <MainLayout title="Titel">
@@ -107,6 +106,7 @@ import thumbsup from "../assets/images/thumbsup.png";
         <Text><Button variant="btnmenu">Støt</Button></Text>
       </div>
     </section>
+    <PopUp />
   </main>
   <!-- Slut på Buttons komponent instanser -->
 </MainLayout>
