@@ -1,0 +1,29 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+import Button from "./Button.astro";
+
+const { sectionTitle, sectionSubtitle, lead, body, buttonText } = Astro.props;
+---
+
+<div
+  class="w-72 md:w-[691px] pb-[var(--space-mob-xxl)] md:pb-[var(--space-desk-xl)]"
+>
+  <!-- Overskrift "h3" -->
+  <div class="text-secondary">
+    <Heading style="h3">{sectionTitle}</Heading>
+  </div>
+  <div class="text-secondary">
+    <!-- Overskrift "h4" -->
+    <Heading style="h4">{sectionSubtitle}</Heading>
+  </div>
+  <div class="pb-[var(--space-mob-sm)] md:pb-[var(--space-desk-xs)]">
+    <!-- bold+italic overskrift -->
+    <Text style="pEm">{lead}</Text>
+  </div>
+  <!-- brødtekst -->
+  <div class="pb-[var(--space-mob-sm)] md:pb-[var(--space-desk-xs)]">
+    <Text style="p">{body}</Text>
+  </div>
+  {buttonText && <Button variant="onsand">{buttonText}</Button>}
+</div>

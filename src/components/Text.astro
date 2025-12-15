@@ -1,12 +1,15 @@
 ---
-// Henter parametrene fra Astro.props
 const { style = "p", stylingclasses = "" } = Astro.props;
 
-//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
-const decorationClasses = {
+const sizeClasses = {
   p: "text-[16px] md:text-[22px] font-sans",
+
+  // bold + italic tekst (emphasis)
+  pEm: "text-[16px] md:text-[22px] font-sans-bold italic",
   psmall: "text-[12px] md:text-[18px] font-sans",
 };
 ---
 
-<p class:list={[decorationClasses[style], stylingclasses]}><slot /></p>
+<p class:list={[sizeClasses[style], stylingclasses]}>
+  <slot />
+</p>
