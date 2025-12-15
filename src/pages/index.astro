@@ -13,13 +13,111 @@ import TextBox from "../components/TextBox.astro";
 
 <MainLayout title="Titel">
   <main class="grid grid-cols-6 md:grid-cols-12">
-    <Heading htmlheading="h1">Lav noget flot!</Heading>
-    <Text teksttype="brødtekst">Så bliver Anders glad:-)</Text>
+    <!-- Start Hero -->
 
-    <!-- Start ScrollBar -->
-    <section class="relative col-span-full md:col-span-full">
+    <div
+      class="bg-secondary col-span-full text-primary py-3 leading-none flex justify-center md:justify-start md:pl-10 z-10 md:-mt-10 md:pb-0"
+    >
+      <Heading style="h1">Projekt</Heading>
+    </div>
+    <div
+      class="text-secondary col-span-full leading-none py-3 flex justify-center md:justify-end md:pr-15 md:-mt-5"
+    >
+      <Heading style="h1">Udenfor</Heading>
+    </div>
+
+    <div
+      class="w-72 col-span-full text-right ml-auto mr-10 md:ml-auto md:mr-15 md:w-[539px] pt-[var(--space-mob-lg)] md:pt-[var(--space-desk-lg)]"
+    >
       <div
-        class="flex overflow-x-auto pl-7 md:pl-30 gap-10 md:gap-[var(--space-desk-xl)] pb-10 md:pb-15 no-scrollbar"
+        class="text-secondary pb-[var(--space-mob-md)] md:pb-[var(--space-desk-xs)]"
+      >
+        <Heading style="h4">Vi hjælper samfundets mest udstødte</Heading>
+      </div>
+      <Button variant="onsand">Støt</Button>
+    </div>
+    <img
+      src="/img/index_hero_mobil.png"
+      alt=""
+      class="block col-span-full md:hidden w-[533.57px] h-[574.02px] -mt-20 z-5"
+    />
+    <img
+      src="/img/index_hero.png"
+      alt=""
+      class="hidden col-span-full md:block md:w-[750px] -mt-172 z-5"
+    />
+    <!-- Slut Hero -->
+
+    <!-- Start rød sektion -->
+    <section
+      class="bg-secondary relative col-span-full -mt-15 pt-30 pb-35 md:pt-18 md:pb-10 md:-mt-17 flex justify-center md:justify-start md:grid md:grid-cols-12"
+    >
+      <div class="w-72 text-left md:w-[808px] md:col-start-2">
+        <div
+          class="text-primary leading-tight pb-[var(--space-mob-sm)] md:pb-[var(--space-desk-xs)]"
+        >
+          <Heading style="h3">Hvad er Projekt Udenfor?</Heading>
+        </div>
+        <div class="text-white md:w-[691px] md:mb-[var(--space-desk-sm)]">
+          <Text>
+            I Projekt Udenfor arbejder vi for at forbedre forholdene for
+            samfundets absolut udstødte. Det gør vi ved at kombinere opsøgende
+            gadeplansarbejde med indsamling og formidling af viden om
+            hjemløshed.
+          </Text>
+        </div>
+        <img
+          src="/img/logo.svg"
+          alt=""
+          class="w-26 h-26 absolute top-19 right-7 md:hidden"
+        />
+        <img
+          src="/img/logo.svg"
+          alt=""
+          class="hidden md:block md:w-40 md:h-40 -ml-7"
+        />
+      </div>
+    </section>
+
+    <div
+      class="col-span-full -mt-25 relative ml-3 md:-mt-65 md:ml-120 mb-[var(--space-mob-md)] md:mb-[var(--space-desk-md)]"
+    >
+      <img
+        src="/img/liggende_cutout.png"
+        alt=""
+        class="z-5 w-[433.5px] h-[141px] md:w-[1065px] md:h-80"
+      />
+    </div>
+
+    <!-- Slut rød sektion -->
+
+    <!-- Start ScrollBar sektion -->
+
+    <section
+      class="col-start-2 col-span-4 md:col-start-2 md:col-span-10 mb-[var(--space-mob-lg)] md:mb-[var(--space-desk-md)]"
+    >
+      <div>
+        <div
+          class="text-secondary leading-tight pb-[var(--space-mob-sm)] md:pb-[var(--space-desk-xs)]"
+        >
+          <Heading style="h3"> Fortællinger fra gaden </Heading>
+        </div>
+        <div class="w-[279px] md:w-[691px]">
+          <Text>
+            Gadesovere er mennesker i hjemløshed, der lever og overnatter på
+            gaden. Selv i årets koldeste måneder sover de udenfor eller søger læ
+            i trappeopgange, parkeringskældre, under broer eller i et telt i en
+            skov.
+          </Text>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="relative col-span-full md:col-span-full mb-[var(--space-mob-xxl)] my:mb-[var(--space-desk-xl)]"
+    >
+      <div
+        class="flex overflow-x-auto pl-7 md:pl-30 gap-10 md:gap-[var(--space-desk-xl)] pb-5 md:pb-15 no-scrollbar"
       >
         <HistorieCard img="/img/kristian.png" title="Kristian" />
         <HistorieCard img="/img/steen.png" title="Steen" />
@@ -29,7 +127,7 @@ import TextBox from "../components/TextBox.astro";
         <HistorieCard img="/img/sandy.png" title="Sandy" />
       </div>
     </section>
-    <!-- Slut ScrollBar -->
+    <!-- Slut ScrollBar sektion -->
     <!-- Start Banner -->
     <div class="col-span-full md:col-span-12">
       <Banner
