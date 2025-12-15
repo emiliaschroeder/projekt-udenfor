@@ -3,7 +3,9 @@ import Heading from "./Heading.astro";
 import Button from "./Button.astro";
 ---
 
-<section class="bg-secondary text-white">
+<section
+  class="bg-secondary text-white my-[var(--space-mob-xxl)] my:mb-[var(--space-desk-xl)]"
+>
   <div class="align-center px-14 py-8 md:pr-180 md:pl-30 md:pt-15 md:pb-0">
     <Heading style="h4"><slot /></Heading>
   </div>

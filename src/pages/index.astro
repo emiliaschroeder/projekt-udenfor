@@ -8,6 +8,7 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import HistorieCard from "../components/HistorieCard.astro";
 import Banner from "../components/Banner.astro";
+import TextBox from "../components/TextBox.astro";
 ---
 
 <MainLayout title="Titel">
@@ -37,5 +38,73 @@ import Banner from "../components/Banner.astro";
       >
     </div>
     <!-- Slut Banner -->
+
+    <!-- Start Tekst -->
+    <section class="col-start-2 col-span-4 md:col-start-2 md:col-span-10">
+      <section class="md:grid md:grid-cols-12">
+        <div class="md:col-start-1">
+          <TextBox
+            sectionTitle="Hvad vi gør"
+            lead="Vi møder mennesker dér, hvor de er – på gaden."
+            body="I Projekt Udenfor har vi respekt for det enkelte menneskes ret til at vælge livsform, og vi gør os ikke til dommere over, hvordan det gode liv ser ud. Men vi mener, at der er måder at leve på, som ikke er værdige, og som kræver, at vi eller andre forholder sig til de betingelser, der leves under."
+          />
+        </div>
+        <div class="md:col-start-1 md:col-span-full md:grid md:grid-cols-5">
+          <div class="md:col-start-1 md:col-span-2">
+            <img
+              src="/img/gadevogn.png"
+              alt=""
+              class="w-full md:w-96 md:h-[604px] pb-[var(--space-mob-xxl)] md:pb-[var(--space-desk-xl)]"
+            />
+          </div>
+          <div class="md:col-start-3 md:col-span-3">
+            <TextBox
+              sectionTitle="Gadeplansarbejde"
+              body="I dagens, aftenens og nattens timer er Projekt Udenfor på gaden i København. Vi observerer byen og stiller os til rådighed overfor de dårligst stillede hjemløse borgere. Gadeplansindsatsen er rettet mod hjemløse gadesovere, der ikke får den hjælp, de har behov for, i de etablerede offentlige systemer."
+              buttonText="Læs mere"
+            />
+            <TextBox
+              sectionTitle="Videns- og formidlingsarbejde"
+              body="Projekt Udenfors arbejde med viden og formidling har til formål at sikre opmærksomhed på gadehjemløshed, påvirke den offentlige debat på hjemløseområdet og sikre at holdninger, handlinger og indsatser overfor målgruppen tager form på et nuanceret og oplyst grundlag."
+              buttonText="Læs mere"
+            />
+          </div>
+        </div>
+
+        <div class="md:col-start-1 md:col-span-full md:grid md:grid-cols-5">
+          <div class="md:col-start-1 md:col-span-2">
+            <img
+              src="/img/denmobilecafe.png"
+              alt=""
+              class="w-full md:w-96 md:h-[604px] pb-[var(--space-mob-xxl)] md:pb-[var(--space-desk-xl)]"
+            />
+          </div>
+          <div class="md:col-start-3 md:col-span-3">
+            <div>
+              <TextBox
+                sectionTitle="Den Mobile Café"
+                body="Som et vigtigt og fast supplement til det professionelle, opsøgende gadeplansarbejde, driver Projekt Udenfor Den Mobile Café. Her serverer en gruppe af frivillige dagligt et måltid mad til gadens folk."
+                buttonText="Læs mere"
+              />
+            </div>
+            <div>
+              <TextBox
+                sectionTitle="Eksperimenterende projekter"
+                body="Derudover udvikler og igangsætter organisationen løbende eksperimenterende og tidsbegrænsede projekter, der tager udgangspunkt i aktuelle problematikker på hjemløseområdet. Projekt Udenfors opgave er ikke, og må aldrig blive, at udføre varigt og etableret socialt arbejde. Derimod arbejder vi bevidst med at gå foran og afprøve nye initiativer, som efterfølgende kan overtages og drives af andre aktører."
+                buttonText="Læs mere"
+              />
+            </div>
+          </div>
+          <div class="md:col-start-3 md:col-span-3">
+            <TextBox
+              sectionTitle="Internationalt arbejde"
+              body="I forlængelse af Projekt Udenfors arbejde på både gade- og formidlingsplan er vi internationalt engagerede og bidrager aktivt i tværeuropæiske netværk, erfaringsudvekslingsfora og lobbyarbejde, der har til formål at stoppe hjemløshed på europæisk niveau"
+              buttonText="Læs mere"
+            />
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- Slut Tekst -->
   </main>
 </MainLayout>
