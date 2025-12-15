@@ -1,0 +1,223 @@
+---
+import Text from "./Text.astro";
+import Button from "./Button.astro";
+---
+
+<form
+  x-data="{
+    // radio-style valg (kan ikke slås fra igen – kun skiftes)
+    type: 'fast',
+    frequency: 'maanedligt',
+    amountPreset: '200',
+    payment: 'mobilepay'
+  }"
+  class="w-full bg-primary p-[var(--space-mob-xl)] md:p-[var(--space-desk-lg)]"
+>
+  <!-- Vælg type af bidrag -->
+  <div class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)]">
+    <Text style="p" class="mb-[var(--space-mob-sm)]">Vælg type af bidrag</Text>
+
+    <div
+      class="grid grid-cols-2 gap-[var(--space-mob-lg)] md:gap-[var(--space-desk-sm)]"
+    >
+      <button
+        type="button"
+        @click="type = 'fast'"
+        :class="type === 'fast' ? 'border-4 border-secondary' : 'border-4 border-transparent'"
+        class="bg-accent py-3 text-center transition"
+        :aria-pressed="type === 'fast'"
+      >
+        Fast donation
+      </button>
+
+      <button
+        type="button"
+        @click="type = 'enkelt'"
+        :class="type === 'enkelt' ? 'border-4 border-secondary' : 'border-4 border-transparent'"
+        class="bg-accent py-3 text-center transition"
+        :aria-pressed="type === 'enkelt'"
+      >
+        Enkelt donation
+      </button>
+    </div>
+
+    <input type="hidden" name="type" :value="type" />
+  </div>
+
+  <!-- Frekvens -->
+  <div class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)]">
+    <Text style="p" class="mb-[var(--space-mob-sm)]">Frekvens</Text>
+
+    <div
+      class="grid grid-cols-2 gap-[var(--space-mob-lg)] md:gap-[var(--space-desk-sm)]"
+    >
+      <button
+        type="button"
+        @click="frequency = 'aarligt'"
+        :class="frequency === 'aarligt' ? 'border-4 border-secondary' : 'border-4 border-transparent'"
+        class="bg-accent py-3 text-center transition"
+        :aria-pressed="frequency === 'aarligt'"
+      >
+        Støt årligt
+      </button>
+
+      <button
+        type="button"
+        @click="frequency = 'maanedligt'"
+        :class="frequency === 'maanedligt' ? 'border-4 border-secondary' : 'border-4 border-transparent'"
+        class="bg-accent py-3 text-center transition"
+        :aria-pressed="frequency === 'maanedligt'"
+      >
+        Støt månedligt
+      </button>
+    </div>
+
+    <input type="hidden" name="frequency" :value="frequency" />
+  </div>
+
+  <!-- Beløb -->
+  <div class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)]">
+    <Text style="p" class="mb-[var(--space-mob-sm)]">Beløb</Text>
+
+    <div
+      class="grid grid-cols-2 gap-[var(--space-mob-lg)] md:gap-[var(--space-desk-sm)]"
+    >
+      <button
+        type="button"
+        @click="amountPreset = '200'"
+        :class="amountPreset === '200' ? 'border-4 border-secondary' : 'border-4 border-transparent'"
+        class="bg-accent py-3 text-center transition"
+        :aria-pressed="amountPreset === '200'"
+      >
+        200,- kr.
+      </button>
+
+      <button
+        type="button"
+        @click="amountPreset = 'andet'"
+        :class="amountPreset === 'andet' ? 'border-4 border-secondary' : 'border-4 border-transparent'"
+        class="bg-accent py-3 text-center transition"
+        :aria-pressed="amountPreset === 'andet'"
+      >
+        Andet
+      </button>
+    </div>
+
+    <input
+      type="number"
+      inputmode="numeric"
+      name="amount"
+      placeholder="Beløb i dkk..."
+      class="mt-[var(--space-mob-lg)] w-full border-2 border-secondary bg-primary px-3 py-2 outline-none"
+    />
+
+    <input type="hidden" name="amountPreset" :value="amountPreset" />
+  </div>
+
+  <!-- Betalingsform -->
+  <div class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)]">
+    <Text style="p" class="mb-[var(--space-mob-sm)]">Betalingsform</Text>
+
+    <div
+      class="grid grid-cols-2 gap-[var(--space-mob-lg)] md:gap-[var(--space-desk-sm)]"
+    >
+      <button
+        type="button"
+        @click="payment = 'mobilepay'"
+        :class="payment === 'mobilepay' ? 'border-4 border-secondary' : 'border-4 border-transparent'"
+        class="bg-accent py-3 text-center transition"
+        :aria-pressed="payment === 'mobilepay'"
+      >
+        MobilePay
+      </button>
+
+      <button
+        type="button"
+        @click="payment = 'kort'"
+        :class="payment === 'kort' ? 'border-4 border-secondary' : 'border-4 border-transparent'"
+        class="bg-accent py-3 text-center transition"
+        :aria-pressed="payment === 'kort'"
+      >
+        Betalingskort
+      </button>
+    </div>
+
+    <input type="hidden" name="payment" :value="payment" />
+  </div>
+
+  <!-- Fornavn / Efternavn -->
+  <div class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)]">
+    <div
+      class="grid grid-cols-2 gap-[var(--space-mob-lg)] md:gap-[var(--space-desk-sm)]"
+    >
+      <div>
+        <Text style="p" class="mb-[var(--space-mob-sm)]">Fornavn</Text>
+        <input
+          type="text"
+          name="firstname"
+          placeholder="..."
+          class="w-full border-2 border-secondary bg-primary px-3 py-2 outline-none"
+        />
+      </div>
+
+      <div>
+        <Text style="p" class="mb-[var(--space-mob-sm)]">Efternavn</Text>
+        <input
+          type="text"
+          name="lastname"
+          placeholder="..."
+          class="w-full border-2 border-secondary bg-primary px-3 py-2 outline-none"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- E-mail -->
+  <div class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)]">
+    <Text style="p" class="mb-[var(--space-mob-sm)]">E-mail</Text>
+    <input
+      type="email"
+      name="email"
+      placeholder="..."
+      class="w-full border-2 border-secondary bg-primary px-3 py-2 outline-none"
+    />
+  </div>
+
+  <!-- Telefon -->
+  <div class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)]">
+    <Text style="p" class="mb-[var(--space-mob-sm)]">Telefon</Text>
+    <input
+      type="tel"
+      name="phone"
+      placeholder="..."
+      class="w-full border-2 border-secondary bg-primary px-3 py-2 outline-none"
+    />
+  </div>
+
+  <!-- Checkboxe -->
+  <div
+    class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)] space-y-[var(--space-mob-lg)]"
+  >
+    <label class="flex items-center gap-3 cursor-pointer">
+      <input type="checkbox" name="terms" class="opacity-100 text-secondary" />
+
+      <Text style="p"> Ja tak, jeg ønsker skattefradrag </Text>
+    </label>
+  </div>
+  <div
+    class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)] space-y-[var(--space-mob-lg)]"
+  >
+    <label class="flex items-center gap-3 cursor-pointer">
+      <input type="checkbox" name="terms" class="opacity-100 text-secondary" />
+
+      <Text style="p">
+        Jeg har læst og accepteret vilkår og betingelser for donation
+      </Text>
+    </label>
+  </div>
+
+  <!-- Submit -->
+  <div class="flex justify-start">
+    <Button variant="onsand">DONÉR</Button>
+  </div>
+</form>
