@@ -1,7 +1,233 @@
 ---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+import Button from "./Button.astro";
+import Link from "./Link.astro";
 ---
-<footer class="bg-primary-500 text-white">
-    <div class="container mx-auto p-4">
-        <p>&copy; 2025</p>
+
+<footer
+  class="bg-secondary text-primary
+    px-[var(--space-mob-lg)]
+    p-[var(--space-mob-xl)]
+    md:p-[var(--space-desk-xl)]"
+>
+  <!-- Footer: wrapper start -->
+  <!-- bestemt bredde for mobil der centreres, fjernes på desktop med none -->
+  <div
+    class="max-w-[420px] mx-auto
+      md:max-w-none
+      md:grid md:grid-cols-12
+      md:gap-x-[var(--space-desk-xl)]"
+  >
+    <!-- Footer: venstre kolonne start -->
+    <div class="md:col-span-7 md:flex md:flex-col md:justify-between">
+      <!-- Footer: titel start -->
+      <div
+        class="mb-[var(--space-mob-xxl)]
+          leading-none
+          text-center
+          md:text-left
+          md:mb-[var(--space-desk-xxl)]"
+      >
+        <Heading style="h1">PROJEKT</Heading>
+        <Heading style="h1">UDENFOR</Heading>
+      </div>
+      <!-- Footer: titel slut -->
+
+      <!-- Footer: links + adresse wrapper (6-col) start -->
+      <!-- Fjerner griid på desk med block -->
+      <div class="grid grid-cols-6 md:block">
+        <div class="col-start-2 col-span-4">
+          <!-- Footer: links + adresse grid start -->
+          <!-- mt-auto skubber blokken i bunden -->
+          <div
+            class="grid grid-cols-2
+              mb-[var(--space-mob-xxl)]
+              gap-x-[var(--space-mob-xl)]
+              md:grid-cols-3
+              md:gap-[var(--space-desk-xxl)]
+              md:mb-0
+              md:mt-auto"
+          >
+            <!-- Footer: sociale medier start -->
+            <div
+              class="flex flex-col md:order-2
+                gap-[var(--space-mob-sm)]
+                mb-[var(--space-mob-xxl)]
+                text-white"
+            >
+              <Text style="psmall" stylingclasses="font-sans-bold">
+                Sociale Medier
+              </Text>
+
+              <Link href="https://www.linkedin.com" variant="primary"
+                >LinkedIn</Link
+              >
+              <Link href="https://www.instagram.com" variant="primary"
+                >Instagram</Link
+              >
+
+              <Link href="https://www.facebook.com" variant="primary"
+                >Facebook</Link
+              >
+            </div>
+            <!-- Footer: sociale medier slut -->
+
+            <!-- Footer: adresse start -->
+            <div
+              class="flex flex-col
+              md:order-1
+                gap-[var(--space-mob-sm)]
+                text-white
+                font-sans"
+            >
+              <Text style="psmall">
+                Ravnsborggade 2-4,<br />3. sal
+              </Text>
+              <Text style="psmall">2200 København N</Text>
+
+              <Link href="mailto:info@udenfor.dk" variant="primary"
+                >info@udenfor.dk</Link
+              >
+              <Link href="https://udenfor.dk" variant="primary"
+                >www.undenfor.dk</Link
+              >
+
+              <Link href="#" variant="primary">Tlf: 33 42 76 00</Link>
+            </div>
+            <!-- Footer: adresse slut -->
+
+            <!-- Footer: sitemap start -->
+            <div
+              class="flex flex-col
+              md:order-3
+                gap-[var(--space-mob-sm)]
+                text-white
+                font-sans"
+            >
+              <Text style="psmall" stylingclasses="font-sans-bold">
+                Sitemap
+              </Text>
+
+              <Link href="#" variant="primary">Støt vores arbejde</Link>
+              <Link href="#" variant="primary">Kontakt os</Link>
+              <Link href="#" variant="primary">Om os</Link>
+            </div>
+            <!-- Footer: sitemap slut -->
+          </div>
+          <!-- Footer: links + adresse grid slut -->
+        </div>
+      </div>
+      <!-- Footer: links + adresse wrapper slut -->
     </div>
+    <!-- Footer: venstre kolonne slut -->
+
+    <!-- Footer: højre kolonne (logo + nyhedsbrev) start -->
+    <div
+      class="md:col-span-4
+        md:col-start-9
+        md:flex md:flex-col
+        md:items-end
+        md:gap-[var(--space-desk-xxl)]"
+    >
+      <!-- Footer: logo desktop start -->
+      <!-- w-full gør højrejustering af logoet muligt med justify-end -->
+      <div
+        class="hidden md:flex
+          md:justify-end
+          md:w-full
+          md:mb-[var(--space-desk-xxl)]
+          md:mt-[var(--space-desk-md)]"
+      >
+        <a href="/" aria-label="Gå til forsiden" class="inline-flex">
+          <img src="/img/logo.svg" alt="Projekt Udenfor" class="w-32" />
+        </a>
+      </div>
+      <!-- Footer: logo desktop slut -->
+
+      <!-- Footer: nyhedsbrev start -->
+      <div
+        class="grid grid-cols-6
+          mb-[var(--space-mob-xxl)]
+          md:mb-[var(--space-desk-sm)]"
+      >
+        <div
+          class="col-start-2 col-span-4
+            md:col-start-auto
+            md:col-span-12
+            md:w-full"
+        >
+          <!-- Nyhedsbrev: titel start -->
+          <div class="mb-[var(--space-mob-sm)]">
+            <Heading style="h4">Nyhedsbrev</Heading>
+          </div>
+          <!-- Nyhedsbrev: titel slut -->
+
+          <!-- Nyhedsbrev: tekst start -->
+          <div class="mb-[var(--space-mob-md)]">
+            <Text style="p">
+              Tilmeld dig vores nyhedsbrev og få det seneste nyt om Projekt
+              Udenfor
+            </Text>
+          </div>
+          <!-- Nyhedsbrev: tekst slut -->
+
+          <!-- Nyhedsbrev: form start -->
+          <form class="flex flex-col gap-[var(--space-mob-md)]">
+            <!-- Nyhedsbrev: navn start -->
+            <label class="flex flex-col gap-[var(--space-mob-xxs)]">
+              <Text style="psmall" stylingclasses="text-white">Navn</Text>
+              <input
+                type="text"
+                name="name"
+                placeholder="..."
+                autocomplete="name"
+                class="w-full bg-secondary
+                  border border-primary
+                  text-primary
+                  px-2 py-2
+                  placeholder:text-primary"
+              />
+            </label>
+            <!-- Nyhedsbrev: navn slut -->
+
+            <!-- Nyhedsbrev: email start -->
+            <label class="flex flex-col gap-[var(--space-mob-xxs)]">
+              <Text style="psmall" stylingclasses="text-white">E-mail</Text>
+              <input
+                type="email"
+                name="email"
+                placeholder="..."
+                autocomplete="email"
+                class="w-full bg-secondary
+                  border border-primary
+                  text-primary
+                  px-2 py-2
+                  placeholder:text-primary"
+              />
+            </label>
+            <!-- Nyhedsbrev: email slut -->
+
+            <!-- Nyhedsbrev: knap start -->
+            <div>
+              <Button variant="onred">TILMELD NYHEDSBREV</Button>
+            </div>
+            <!-- Nyhedsbrev: knap slut -->
+          </form>
+          <!-- Nyhedsbrev: form slut -->
+        </div>
+      </div>
+      <!-- Footer: nyhedsbrev slut -->
+
+      <!-- Footer: logo mobil start -->
+      <div class="md:hidden flex justify-center">
+        <a href="/" aria-label="Gå til forsiden" class="inline-flex">
+          <img src="/img/logo.svg" alt="Projekt Udenfor" class="w-20" />
+        </a>
+      </div>
+      <!-- Footer: logo mobil slut -->
+    </div>
+    <!-- Footer: højre kolonne slut -->
+  </div>
+  <!-- Footer: wrapper slut -->
 </footer>
