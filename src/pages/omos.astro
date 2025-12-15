@@ -6,12 +6,91 @@ import Button from "../components/Button.astro";
 import PersonCard from "../components/PersonCard.astro";
 import PersonerSektionCard from "../components/PersonerSektionCard.astro";
 import Banner from "../components/Banner.astro";
+import TextBox from "../components/TextBox.astro";
 ---
 
 <MainLayout title="Om os">
   <main>
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 p-[var(--space-mob-xl)]
+    md:p-[var(--space-desk-xl)] md:gap-[var(--space-desk-lg)]"
+    >
+      <!-- Tekst 1 start -->
+      <div
+        class="col-start-2 col-span-4 mb-[var(--space-mob-xl)]
+             md:col-start-5 md:col-span-6
+             md:row-start-1 md:mb-0"
+      >
+        <Text style="p">
+          Projekt Udenfor sætter ind dér, hvor det offentlige sociale
+          sikkerhedsnet ikke er finmasket nok. Det har været grundideologien bag
+          vores arbejde, siden organisationen blev grundlagt i 1996.
+        </Text>
+      </div>
+      <!-- Tekst 1 slut -->
+
+      <!-- Billeder start -->
+      <div
+        class="col-start-2 col-span-4 flex gap-[var(--space-mob-md)] mb-[var(--space-mob-xl)]
+             md:col-start-2 md:col-span-3
+             md:flex-col md:gap-[var(--space-desk-xxl)]
+             md:row-start-1 md:row-span-2
+             md:mb-0"
+      >
+        <img
+          src="/img/prebenbranct.png"
+          alt=""
+          class="w-1/2 md:w-full object-cover"
+        />
+        <img
+          src="/img/tunnel.png"
+          alt=""
+          class="w-1/2 md:w-full object-cover"
+        />
+      </div>
+      <!-- Billeder slut -->
+
+      <!-- Tekst 3 start -->
+      <div
+        class="col-start-2 col-span-4
+             md:col-start-5 md:col-span-6
+             md:row-start-2"
+      >
+        <Text style="p">
+          Dr. med. Preben Brandt, som forinden havde været ansat som
+          Socialoverlæge på Københavns Kommunes store, gamle hjemløseinstitution
+          Sundholm, havde i flere år udført opsøgende arbejde på gaden uden for
+          sin arbejdstid. På natlige vandringer og sene aftenture opsøgte han
+          mennesker, der var hjemløse – særligt de, der kæmpede med svær psykisk
+          sygdom. Han lyttede og forholdt sig til dem, gav dem omsorg, tilbød
+          hjælp og nedskrev systematisk sine erfaringer.’ <br /><br /> Preben Brandt
+          ville gøre noget ved den lidelse og uret, som han fandt blandt hjemløse
+          borgere, der var overladt til sig selv på gaden i Danmark. Han ville afhjælpe
+          lidelsen hos det enkelte individ, og han ville skabe forandring i samfundet.
+          Hos socialarbejderen Torben Pilely, der også forsøgte sig med opsøgende
+          gadeplansarbejde i sin fritid, fandt Preben Brandt omsider en allieret.
+          Sammen startede de organisationen, som de kaldte Posefolksprojektet, og
+          som senere skulle blive kendt som Projekt Udenfor. <br />
+          <br />I 1998 overgik Projekt Udenfor fra at være en privatejet
+          virksomhed til at blive en selvejende institution (en
+          ikke-erhvervsdrivende fond). Ved samme lejlighed blev et stiftende og
+          konstituerende bestyrelsesmøde afholdt, hvor organisationens
+          vedtægter, herunder fondens formål, blev nedfældet. <br />
+          <br /> Lige siden har vi i Projekt Udenfor arbejdet med og for samfundets
+          absolut udstødte. Gennem gadeplansarbejde, dokumentation og formidling af
+          viden samt ved at føre en kritisk debat forsøger vi at skabe forandring
+          for hjemløse borgere, der lever en forpint og isoleret tilværelse på gaden,
+          og som ikke får den hjælp, som de har behov for og ret til i og af det offentlige
+          hjælpesystem.
+        </Text>
+      </div>
+      <!-- Tekst 3 slut -->
+    </div>
+
     <!-- Om os: banner start -->
-    <div class="mb-[var(--space-mob-xxl)] md:mb-[var(--space-desk-xl)]">
+    <div
+      class="mb-[var(--space-mob-xxl)] ol-span-full md:col-span-12 md:mb-[var(--space-desk-xl)]"
+    >
       <Banner>
         Godt en tredjedel af alle borgere i hjemløshed er unge mellem 18 og 29
         år.</Banner
