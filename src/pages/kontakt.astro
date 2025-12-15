@@ -1,0 +1,127 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import TextBox from "../components/TextBox.astro";
+import Link from "../components/Link.astro";
+---
+
+<MainLayout title="kontakt">
+  <main class="grid grid-cols-6 md:grid-cols-12">
+    <!-- START HERO -->
+    <section class="col-span-full bg-primary">
+      <div
+        class="col-span-full px-[var(--space-mob-md)] md:px-0 md:col-start-2 md:col-span-10"
+      >
+        <div class="grid grid-cols-6 md:grid-cols-12 items-end md:pl-10">
+          <!-- Tekst -->
+          <div class="col-span-full md:col-span-7 text-secondary">
+            <Heading style="h2">Kontakt</Heading>
+          </div>
+        </div>
+      </div>
+      <!-- Billede -->
+      <div
+        class="col-span-full md:col-start-4 md:flex md:justify-end relative z-10 md:z-30"
+      >
+        <img
+          src="/img/liggende_cutout_sand.svg"
+          alt="Person der sover på gaden"
+          class="w-full md:w-[800px] pl-10 md:pl-0 md:mt-[-100px]"
+        />
+      </div>
+    </section>
+
+    <!-- start rød baggrund Indhold -->
+    <section
+      class="bg-secondary col-span-full grid grid-cols-6 md:grid-cols-12 pt-20 pb-10 -mt-10 md:-mt-40 md:pb-20 mb-[var(--space-mob-xxl)] md:mb-[var(--space-desk-xl)]"
+    >
+      <div
+        class="col-start-2 col-span-4 w-[283px] md:col-start-2 md:col-span-6 md:w-[484px]"
+      >
+        <div
+          class="text-primary pb-[var(--space-mob-sm)] md:pt-[var(--space-desk-xs)]"
+        >
+          <Heading style="h4">Vi hører gerne fra dig</Heading>
+        </div>
+
+        <div class="text-white">
+          <Text
+            >Vil du i kontakt med os kan du ringe eller skrive til os og snakke
+            med en af medarbejderne
+          </Text>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slut rød baggrund indhold -->
+    <!-- SLUT HERO -->
+
+    <!-- Start Kontaktoplysninger -->
+    <section
+      class="col-span-full grid grid-cols-6 md:grid-cols-12 pb-[var(--space-mob-xxl)] md:pb-[var(--space-desk-xl)]"
+    >
+      <div class="col-start-2 col-span-4 w-64 md:col-start-2 md:col-span-6">
+        <div
+          class="text-secondary pb-[var(--space-mob-sm)] md:pb-[var(--space-desk-xs)]"
+        >
+          <Heading style="h4">Kontaktoplysninger</Heading>
+        </div>
+
+        <div
+          class="w-[278px] md:w-[705px] flex flex-col md:flex-row md:gap-[173px]"
+        >
+          <div class="">
+            <div class="pb-[var(--space-mob-md)]">
+              <Text style="pEm"> E-mail : </Text>
+              <Text>info@udenfor.dk</Text>
+            </div>
+            <div class="pb-[var(--space-mob-md)]">
+              <Text style="pEm"> Hovednummer : </Text>
+              <Text>33 42 76 00</Text>
+            </div>
+          </div>
+          <div class="">
+            <Text style="pEm"> Vores besøgs- og postadresse er :</Text>
+            <Text
+              >Fonden Projekt Udenfor <br /> Ravnsborggade 2-4, 3. sal <br /> 2200
+              København N</Text
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Slut kontaktoplysninger -->
+
+    <!-- Start indhold -->
+    <section
+      class="col-span-full grid grid-cols-6 md:grid-cols-12 pb-[var(--space-mob-xxl)] md:pb-[var(--space-desk-xl)]"
+    >
+      <div class="col-start-2">
+        <TextBox
+          sectionSubtitle="Gadeplansarbejde"
+          body="Hvis du har behov for hjælp på gadeplan eller hvis din henvendelse drejer sig om en hjemløs borger, kan du kontakte en gadeplansmedarbejder direkte. Du finder kontaktoplysninger på vores gadeplansmedarbejdere her."
+        />
+        <TextBox
+          sectionSubtitle="Presse"
+          body="Hvis du er journalist og gerne vil have en kommentar fra Projekt Udenfor, kan du kontakte direktør Bo Heide-Jochimsen på 6120 7305 eller bj@udenfor.dk"
+        />
+        <TextBox
+          sectionSubtitle="Viden og formidling"
+          body="Er du studerende og vil du gerne stille et par spørgsmål, eller er du interesseret i at booke et oplæg til din skole eller arbejdsplads, kan du kontakte Kirsten på ksa@udenfor.dk eller 25 97 89 75. Er du specialestuderende eller forsker og ønsker du at indgå et samarbejde med Projekt Udenfor, så tag fat i Anne-Sofie på 92 92 62 14 eller asm@udenfor.dk"
+        />
+        <TextBox
+          sectionSubtitle="Bliv frivillig"
+          body="Ønsker du at høre om mulighederne for at blive frivillig i Den Mobile Café, skal du kontakte frivilligkoordinator Christian på 53 60 01 06 eller chr@udenfor.dk. Hvis du har andre gode idéer til, hvordan du kan engagere dig i Projekt Udenfors arbejde, hører vi også gerne fra dig. Skriv til info@udenfor.dk eller ring til vores hovednummer 33 42 76 00."
+          buttonText="Læs mere"
+        />
+        <TextBox
+          sectionSubtitle="Persondata"
+          body="Har du spørgsmål til Projekt Udenfors behandling af persondata, eller ønsker du adgang til, eller sletning af, de oplysninger, som Projekt Udenfor behandler om dig, kan du rette henvendelse til gdpr@udenfor.dk. Du kan læse mere om dine rettigheder i Projekt Udenfors Persondatapolitik."
+        />
+      </div>
+    </section>
+
+    <!-- Slut indhold -->
+  </main>
+</MainLayout>
