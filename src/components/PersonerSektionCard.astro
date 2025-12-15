@@ -1,0 +1,22 @@
+---
+import Heading from "./Heading.astro";
+const { title } = Astro.props;
+---
+
+<section class="grid grid-cols-6 md:grid-cols-12 md:mb-[var(--space-desk-xl)]">
+  <!-- PersonerSektionCard: content wrapper start -->
+  <div class="col-start-2 col-span-4 md:col-start-2 md:col-span-10">
+    <!-- PersonerSektionCard: title start -->
+    <div class="mb-[var(--space-mob-md)]">
+      <Heading style="h4" stylingclasses="text-secondary ">{title}</Heading>
+    </div>
+    <!-- PersonerCard: title slut -->
+
+    <!-- PersonerCard: cards grid start -->
+    <div class="grid md:grid-cols-3 md:gap-[var(--space-desk-xl)]">
+      <slot />
+    </div>
+    <!-- PersonerCard: cards grid slut -->
+  </div>
+  <!-- PersonerCard: content wrapper slut -->
+</section>

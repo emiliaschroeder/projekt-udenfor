@@ -2,37 +2,215 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
-import Footer from "../components/Footer.astro";
-import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
 import PersonCard from "../components/PersonCard.astro";
+import PersonerSektionCard from "../components/PersonerSektionCard.astro";
+import Banner from "../components/Banner.astro";
 ---
 
 <MainLayout title="Om os">
   <main>
-    <section class="grid grid-cols-6 md:grid-cols-12">
-      <div class="col-start-2 col-span-4 md:col-start-2 md:col-span-3">
-        <PersonCard
-          title="Fiede Fries"
-          img="/img/anette.png"
-          alt_tekst="Billede af Fiede Fries"
-          job="Projektleder"
-          mail="mailto:bj@udenfor.dk"
-          number="33 42 76 00"
-          <
-          main
-        />
-        <PersonCard
-          title="Fiede Fries"
-          img="/img/anette.png"
-          alt_tekst="Billede af Fiede Fries"
-          job="Projektleder"
-          mail="mailto:bj@udenfor.dk"
-          number="33 42 76 00"
-          <
-          main
-        />
+    <!-- Om os: banner start -->
+    <div class="mb-[var(--space-mob-xxl)] md:mb-[var(--space-desk-xl)]">
+      <Banner>
+        Godt en tredjedel af alle borgere i hjemløshed er unge mellem 18 og 29
+        år.</Banner
+      >
+    </div>
+    <!-- Om os: banner slut -->
+
+    <!-- Om os: sideoverskrift "Medarbejdere" start -->
+    <div class="mb-[var(--space-mob-md)] grid grid-cols-6 md:grid-cols-12">
+      <div class="col-start-2 col-span-4 md:col-start-2 md:col-span-4">
+        <Heading style="h3" stylingclasses="text-secondary "
+          >Medarbejdere</Heading
+        >
       </div>
-    </section>
-  </main></MainLayout
->
+    </div>
+    <!-- Om os: sideoverskrift "Medarbejdere" slut -->
+
+    <!-- Om os: sektion "Ledelse og administration" start -->
+    <PersonerSektionCard title="Ledelse og administration">
+      <!-- PersonCard start -->
+      <PersonCard
+        title="Bo Heide-Joechimsen"
+        img="/img/bo.png"
+        alt_tekst="Billede af Bo"
+        job="Inspektør"
+        mail="bj@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+
+      <!-- PersonCard start -->
+      <PersonCard
+        title="Anette M. Tullberg"
+        img="/img/anette.png"
+        alt_tekst="Billede af anette"
+        job="Administrations- og personaleansvarlig"
+        mail="amt@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+    </PersonerSektionCard>
+    <!-- Om os: sektion "Ledelse og administration" slut -->
+
+    <!-- Om os: sektion "Gade" start -->
+    <PersonerSektionCard title="Gade">
+      <PersonCard
+        title="Bo Heide-Joechimsen"
+        img="/img/bo.png"
+        alt_tekst="Billede af Bo"
+        job="Inspektør"
+        mail="bj@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+
+      <!-- PersonCard start -->
+      <PersonCard
+        title="Anette M. Tullberg"
+        img="/img/anette.png"
+        alt_tekst="Billede af Anette"
+        job="Administrations- og personaleansvarlig"
+        mail="amt@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+
+      <!-- PersonCard start -->
+      <PersonCard
+        title="Bo Heide-Joechimsen"
+        img="/img/bo.png"
+        alt_tekst="Billede af bo"
+        job="Inspektør"
+        mail="bj@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+
+      <!-- PersonCard start -->
+      <PersonCard
+        title="Anette M. Tullberg"
+        img="/img/anette.png"
+        alt_tekst="Billede af anette"
+        job="Administrations- og personaleansvarlig"
+        mail="amt@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+
+      <!-- PersonCard start -->
+      <PersonCard
+        title="Bo Heide-Joechimsen"
+        img="/img/bo.png"
+        alt_tekst="Billede af bo"
+        job="Inspektør"
+        mail="bj@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+
+      <!-- PersonCard start -->
+      <PersonCard
+        title="Anette M. Tullberg"
+        img="/img/anette.png"
+        alt_tekst="Billede af anette"
+        job="Administrations- og personaleansvarlig"
+        mail="amt@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+    </PersonerSektionCard>
+    <!-- Om os: sektion "Gade" slut -->
+
+    <!-- Om os: sektion "Viden og formidling" start -->
+    <PersonerSektionCard title="Viden og formidling">
+      <!-- PersonCard start -->
+      <PersonCard
+        title="Bo Heide-Joechimsen"
+        img="/img/bo.png"
+        alt_tekst="Billede af bo"
+        job="Inspektør"
+        mail="bj@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+
+      <!-- PersonCard start -->
+      <PersonCard
+        title="Anette M. Tullberg"
+        img="/img/anette.png"
+        alt_tekst="Billede af anette"
+        job="Administrations- og personaleansvarlig"
+        mail="amt@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+
+      <!-- PersonCard start -->
+      <PersonCard
+        title="Bo Heide-Joechimsen"
+        img="/img/bo.png"
+        alt_tekst="Billede af bo"
+        job="Inspektør"
+        mail="bj@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+
+      <!-- PersonCard start -->
+      <PersonCard
+        title="Anette M. Tullberg"
+        img="/img/anette.png"
+        alt_tekst="Billede af anette"
+        job="Administrations- og personaleansvarlig"
+        mail="amt@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+    </PersonerSektionCard>
+    <!-- Om os: sektion "Viden og formidling" slut -->
+
+    <!-- Om os: sektion "Den mobile cafe" start -->
+    <PersonerSektionCard title="Den mobile cafe">
+      <!-- PersonCard start -->
+      <PersonCard
+        title="Bo Heide-Joechimsen"
+        img="/img/bo.png"
+        alt_tekst="Billede af bo"
+        job="Inspektør"
+        mail="bj@udenfor.dk"
+        number="33 42 76 00"
+        <
+        main
+      />
+      <!-- PersonCard slut -->
+    </PersonerSektionCard>
+    <!-- Om os: sektion "Den mobile cafe" slut -->
+  </main>
+</MainLayout>
