@@ -7,37 +7,47 @@ import PersonCard from "../components/PersonCard.astro";
 import PersonerSektionCard from "../components/PersonerSektionCard.astro";
 import Banner from "../components/Banner.astro";
 import TextBox from "../components/TextBox.astro";
+import Link from "../components/Link.astro";
 ---
 
 <MainLayout title="Om os">
   <main>
     <section>
-      <div class="grid grid-cols-6">
-        <!-- Om os: titel start -->
+      <div class="grid grid-cols-6 md:grid-cols-12">
+        <!-- Hero: H2 start -->
         <div
-          class="col-start-1 p-[var(--space-mob-md)] col-span-4 text-secondary"
+          class="col-start-1 pl-[var(--space-desk-md)] col-span-4 md:col-start-1 md:col-span-12 text-secondary md:pl-[var(--space-desk-md)]"
         >
           <Heading style="h2">OM OS</Heading>
         </div>
-        <!-- Om os: titel slut -->
+        <!-- Hero: H2 slut -->
 
-        <!-- Om os: hero start -->
+        <!-- Hero: container start -->
         <div
-          class="col-span-full bg-secondary relative h-[496px] md:h-[558px] overflow-hidden mb-[var(--space-mob-xl)]"
+          class="col-span-full bg-secondary relative overflow-hidden
+            h-[496px]
+            md:h-[558px] md:pl-[var(--space-desk-md)]"
         >
           <!-- Hero: indhold start -->
-          <div class="col-start-2 col-span-4 grid grid-cols-6 h-full">
+          <div class="grid grid-cols-6 md:grid-cols-12 h-full relative">
+            <!-- Tekst (mobil: midten / desktop: venstre) -->
             <div
-              class="col-start-2 col-span-4 text-white relative z-10 pt-[var(--space-mob-xl)]"
+              class="col-start-2 col-span-4
+                 md:col-start-1 md:col-span-5
+                 text-white relative z-10
+                 pt-[var(--space-mob-xl)]
+                  md:mt-[var(--space-desk-xl)]"
             >
-              <!-- Hero: overskrift start -->
-              <div class="mb-[var(--space-mob-sm)]">
+              <div>
+                <!-- Hero: overskrift start -->
                 <Heading style="h4">Projekt Udenfors historie</Heading>
+                <!-- Hero: overskrift slut -->
               </div>
-              <!-- Hero: overskrift slut -->
 
               <!-- Hero: brødtekst start -->
-              <div class="mb-[var(--space-mob-sm)]">
+              <div
+                class="mt-[var(--space-mob-md)] md:mb-[var(--space-desk-xxl)]"
+              >
                 <Text style="psmall">
                   Lige så langt tilbage i tiden, hvor der er beretninger om det
                   sociale liv mellem mennesker, har der været fortællinger om
@@ -48,28 +58,33 @@ import TextBox from "../components/TextBox.astro";
               <!-- Hero: brødtekst slut -->
 
               <!-- Hero: knap start -->
-              <div class="relative z-10">
+              <div
+                class="mt-[var(--space-mob-xl)] md:mt-[var(--space-desk-xl)]"
+              >
                 <Button href="/stoet" variant="onred">BLIV FRIVILLIG</Button>
               </div>
               <!-- Hero: knap slut -->
             </div>
+
+            <!-- Billede (mobil: nederst fuld bredde / desktop: højre side) -->
+            <img
+              src="/img/hero_omos.png"
+              alt="Person der sover på gaden"
+              class="absolute object-cover
+                 bottom-0 left-0
+                 w-full h-[266px]
+                 md:left-auto md:right-0 md:top-0 md:bottom-0
+                 md:w-[1029px] md:h-full
+                 z-0"
+            />
           </div>
           <!-- Hero: indhold slut -->
-
-          <!-- Hero: billede start -->
-          <img
-            src="/img/hero_omos.png"
-            alt="Person der sover på gaden"
-            class="absolute bottom-0 right-0 w-full h-[266px] md:h-[686px] object-cover z-0"
-          />
-          <!-- Hero: billede slut -->
         </div>
-        <!-- Om os: hero slut -->
+        <!-- Hero: container slut -->
       </div>
     </section>
-
     <div
-      class="grid grid-cols-6 md:grid-cols-12 p-[var(--space-mob-xl)]
+      class="grid grid-cols-6 md:grid-cols-12 pt-[var(--space-mob-xl)] pb-[var(--space-mob-xl)]
     md:p-[var(--space-desk-xl)] md:gap-[var(--space-desk-lg)]"
     >
       <!-- Tekst 1 start -->
@@ -143,7 +158,60 @@ import TextBox from "../components/TextBox.astro";
       </div>
       <!-- Tekst 3 slut -->
     </div>
+    <section>
+      <div
+        class="grid grid-cols-6 md:grid md:grid-cols-12 md:p-[var(--space-desk-xl)]"
+      >
+        <div
+          class="col-span-4 col-start-2 md:col-span-6 md:col-start-2 pb-[var(--space-mob-xl)]"
+        >
+          <div class="pt-[var(--space-mob-xl)] pb-[var(--space-mob-sm)]">
+            <Heading style="h4" stylingclasses="text-secondary"
+              >Bliv frivillig</Heading
+            >
 
+            <Text style="p"
+              >Vi søger frivillige, der har lyst til at dedikere 2 x 4 timer om
+              måneden til at tilbyde et måltid mad, andre fornødenheder og
+              omsorg til hjemløse borgere på gaden via Den Mobile Café. <br />
+              <br /> Som frivillig i Den Mobile Café får du mulighed for at engagere
+              dig i et meningsfyldt arbejde og gøre en forskel for nogle af de dårligst
+              stillede mennesker i København.
+              <br />
+              <Link href="#"> Du kan læse mere om Den Mobile Café her.</Link>
+              <br />
+              <br /> Vagterne ligger fra kl. 17 – 21 i hverdagene og starter og slutter
+              på vores kontor i Ravnsborggade i København N. <br />
+              <br /> Din baggrund er ikke afgørende. Vi har en bred vifte af fagligheder
+              repræsenteret i frivilliggruppen. Om vi er et match, finder vi ud af
+              til en samtale. Dit engagement i Den Mobile Café kræver, at du er mødestabil
+              og kan lide at tale med mennesker. Det er en fordel, men ikke et krav,
+              at du har kørekort. <br />
+              <br /> Ring eller skriv til Christian, hvis du er interesseret eller
+              har spørgsmål (se kontakt oplysninger længere nede)
+            </Text>
+          </div>
+          <div class="mt-[var(--space-mob-sm)]">
+            <Button href="/stoet" variant="onsand">KONTAKT</Button>
+          </div>
+        </div>
+        <div
+          class="col-span-4 col-start-2 mb-[var(--space-mob-xl)] md:col-span-3 md:col-start-9 md:row-span-2 md:row-start-1 md:mb-0"
+        >
+          <img
+            src="/img/christian.png"
+            alt="Kristian"
+            class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-xxl)] md:mt-[var(--space-desk-xl)] md:place-self-end"
+          />
+
+          <img
+            src="/img/to_frivillige.png"
+            alt="to frivillige der arbejder"
+            class=""
+          />
+        </div>
+      </div>
+    </section>
     <!-- Om os: banner start -->
     <div
       class="mb-[var(--space-mob-xxl)] ol-span-full md:col-span-12 md:mb-[var(--space-desk-xl)]"
