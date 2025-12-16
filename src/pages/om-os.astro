@@ -6,415 +6,457 @@ import Button from "../components/Button.astro";
 import PersonCard from "../components/PersonCard.astro";
 import PersonerSektionCard from "../components/PersonerSektionCard.astro";
 import Banner from "../components/Banner.astro";
-import TextBox from "../components/TextBox.astro";
 import Link from "../components/Link.astro";
+import PopUp from "../components/PopUp.astro";
 ---
 
 <MainLayout title="Om os">
   <main>
-    <section>
-      <div class="grid grid-cols-6 md:grid-cols-12">
-        <!-- Hero: H2 start -->
-        <div
-          class="col-start-1 pl-[var(--space-desk-md)] col-span-4 md:col-start-1 md:col-span-12 text-secondary md:pl-[var(--space-desk-md)]"
-        >
-          <Heading style="h2">OM OS</Heading>
-        </div>
-        <!-- Hero: H2 slut -->
-
-        <!-- Hero: container start -->
-        <div
-          class="col-span-full bg-secondary relative overflow-hidden
-            h-[496px]
-            md:h-[558px] md:pl-[var(--space-desk-md)]"
-        >
-          <!-- Hero: indhold start -->
-          <div class="grid grid-cols-6 md:grid-cols-12 h-full relative">
-            <!-- Tekst (mobil: midten / desktop: venstre) -->
-            <div
-              class="col-start-2 col-span-4
-                 md:col-start-1 md:col-span-5
-                 text-white relative z-10
-                 pt-[var(--space-mob-xl)]
-                  md:mt-[var(--space-desk-xl)]"
-            >
-              <div>
-                <!-- Hero: overskrift start -->
-                <Heading style="h4">Projekt Udenfors historie</Heading>
-                <!-- Hero: overskrift slut -->
-              </div>
-
-              <!-- Hero: brødtekst start -->
-              <div
-                class="mt-[var(--space-mob-md)] md:mb-[var(--space-desk-xxl)]"
-              >
-                <Text style="psmall">
-                  Lige så langt tilbage i tiden, hvor der er beretninger om det
-                  sociale liv mellem mennesker, har der været fortællinger om
-                  mennesker, der udstødes af fællesskabet og må leve isoleret
-                  for sig selv …
-                </Text>
-              </div>
-              <!-- Hero: brødtekst slut -->
-
-              <!-- Hero: knap start -->
-              <div
-                class="mt-[var(--space-mob-xl)] md:mt-[var(--space-desk-xl)]"
-              >
-                <Button href="/stoet" variant="onred">BLIV FRIVILLIG</Button>
-              </div>
-              <!-- Hero: knap slut -->
-            </div>
-
-            <!-- Billede (mobil: nederst fuld bredde / desktop: højre side) -->
-            <img
-              src="/img/hero_omos.png"
-              alt="Person der sover på gaden"
-              class="absolute object-cover
-                 bottom-0 left-0
-                 w-full h-[266px]
-                 md:left-auto md:right-0 md:top-0 md:bottom-0
-                 md:w-[1029px] md:h-full
-                 z-0"
-            />
-          </div>
-          <!-- Hero: indhold slut -->
-        </div>
-        <!-- Hero: container slut -->
-      </div>
-    </section>
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 pt-[var(--space-mob-xl)] pb-[var(--space-mob-xl)]
-    md:p-[var(--space-desk-xl)] md:gap-[var(--space-desk-lg)]"
-    >
-      <!-- Tekst 1 start -->
+    <!-- OM OS – HERO INTRO START -->
+    <section class="col-span-full bg-primary">
+      <!-- Hero: titel-wrapper start -->
       <div
-        class="col-start-2 col-span-4 mb-[var(--space-mob-xl)]
-             md:col-start-5 md:col-span-6
-             md:row-start-1 md:mb-0"
+        class="col-span-full px-[var(--space-mob-md)]
+           md:px-0 md:col-start-2 md:col-span-10"
       >
-        <Text style="p">
-          Projekt Udenfor sætter ind dér, hvor det offentlige sociale
-          sikkerhedsnet ikke er finmasket nok. Det har været grundideologien bag
-          vores arbejde, siden organisationen blev grundlagt i 1996.
-        </Text>
+        <div class="grid grid-cols-6 md:grid-cols-12 items-end md:pl-10">
+          <!-- Hero: titel start -->
+          <div class="col-span-full md:col-span-7 text-secondary">
+            <Heading style="h2">Om os</Heading>
+          </div>
+          <!-- Hero: titel slut -->
+        </div>
       </div>
-      <!-- Tekst 1 slut -->
+      <!-- Hero: titel-wrapper slut -->
 
-      <!-- Billeder start -->
+      <!-- Hero: billede start -->
       <div
-        class="col-start-2 col-span-4 flex gap-[var(--space-mob-md)] mb-[var(--space-mob-xl)]
+        class="col-span-full md:col-start-4 md:flex md:justify-end
+           relative z-10 md:z-30"
+      >
+        <img
+          src="/img/liggende_cutout_sand.svg"
+          alt="Person der sover på gaden"
+          class="w-full md:w-[800px] pl-10 md:pl-0 md:mt-[-100px]"
+        />
+      </div>
+      <!-- Hero: billede slut -->
+    </section>
+    <!-- OM OS – HERO INTRO SLUT -->
+
+    <!--  HISTORIE HERO START  -->
+    <section
+      class="bg-secondary col-span-full grid grid-cols-6 md:grid-cols-12
+         pt-20 pb-10 -mt-10
+         md:-mt-40 md:pb-20
+         mb-[var(--space-mob-xxl)] md:mb-[var(--space-desk-xl)]"
+    >
+      <!-- Historie: tekstgruppe start -->
+      <div
+        class="grid col-start-2 col-span-4
+           w-[283px]
+           gap-[var(--space-mob-md)]
+           md:col-start-2 md:col-span-6
+           md:w-[484px]
+           md:gap-[var(--space-desk-sm)]"
+      >
+        <!-- Historie: overskrift start -->
+        <div class="text-primary">
+          <Heading style="h4">Projekt Udenfors historie</Heading>
+        </div>
+        <!-- Historie: overskrift slut -->
+
+        <!-- Historie: brødtekst start -->
+        <div class="text-white">
+          <Text>
+            Lige så langt tilbage i tiden, hvor der er beretninger om det
+            sociale liv mellem mennesker, har der været fortællinger om
+            mennesker, der udstødes af fællesskabet og må leve isoleret for sig
+            selv …
+          </Text>
+        </div>
+        <!-- Historie: brødtekst slut -->
+
+        <!-- Historie: CTA start -->
+        <div>
+          <Button href="/stoet" variant="onred">BLIV FRIVILLIG</Button>
+        </div>
+        <!-- Historie: CTA slut -->
+      </div>
+      <!-- Historie: tekstgruppe slut -->
+    </section>
+    <!--  HISTORIE HERO SLUT  -->
+
+    <!--  HISTORIE + BILLEDER START -->
+    <section>
+      <div
+        class="grid grid-cols-6 md:grid-cols-12
+           pt-[var(--space-mob-xl)]
+           pb-[var(--space-mob-xl)]
+           md:p-[var(--space-desk-xl)]
+           md:gap-[var(--space-desk-lg)]"
+      >
+        <!-- Tekst 1 start -->
+        <div
+          class="col-start-2 col-span-4
+             mb-[var(--space-mob-xl)]
+             md:col-start-5 md:col-span-5
+             md:row-start-1 md:mb-0"
+        >
+          <Text style="p">
+            Projekt Udenfor sætter ind dér, hvor det offentlige sociale
+            sikkerhedsnet ikke er finmasket nok. Det har været grundideologien
+            bag vores arbejde, siden organisationen blev grundlagt i 1996.
+          </Text>
+        </div>
+        <!-- Tekst 1 slut -->
+
+        <!-- Billeder start -->
+        <div
+          class="col-start-2 col-span-4
+             flex gap-[var(--space-mob-md)]
+             mb-[var(--space-mob-xl)]
              md:col-start-2 md:col-span-3
              md:flex-col md:gap-[var(--space-desk-xxl)]
              md:row-start-1 md:row-span-2
              md:mb-0"
-      >
-        <img
-          src="/img/prebenbranct.png"
-          alt=""
-          class="w-1/2 md:w-full object-cover"
-        />
-        <img
-          src="/img/tunnel.png"
-          alt=""
-          class="w-1/2 md:w-full object-cover"
-        />
-      </div>
-      <!-- Billeder slut -->
+        >
+          <img
+            src="/img/prebenbranct.png"
+            alt="Dr. med. Preben Brandt"
+            class="w-1/2 md:w-full object-cover"
+          />
+          <img
+            src="/img/tunnel.png"
+            alt="Tunnel hvor hjemløse opholder sig"
+            class="w-1/2 md:w-full object-cover"
+          />
+        </div>
+        <!-- Billeder slut -->
 
-      <!-- Tekst 3 start -->
-      <div
-        class="col-start-2 col-span-4
-             md:col-start-5 md:col-span-6
+        <!-- Tekst 3 start -->
+        <div
+          class="col-start-2 col-span-4
+             md:col-start-5 md:col-span-5
              md:row-start-2"
-      >
-        <Text style="p">
-          Dr. med. Preben Brandt, som forinden havde været ansat som
-          Socialoverlæge på Københavns Kommunes store, gamle hjemløseinstitution
-          Sundholm, havde i flere år udført opsøgende arbejde på gaden uden for
-          sin arbejdstid. På natlige vandringer og sene aftenture opsøgte han
-          mennesker, der var hjemløse – særligt de, der kæmpede med svær psykisk
-          sygdom. Han lyttede og forholdt sig til dem, gav dem omsorg, tilbød
-          hjælp og nedskrev systematisk sine erfaringer.’ <br /><br /> Preben Brandt
-          ville gøre noget ved den lidelse og uret, som han fandt blandt hjemløse
-          borgere, der var overladt til sig selv på gaden i Danmark. Han ville afhjælpe
-          lidelsen hos det enkelte individ, og han ville skabe forandring i samfundet.
-          Hos socialarbejderen Torben Pilely, der også forsøgte sig med opsøgende
-          gadeplansarbejde i sin fritid, fandt Preben Brandt omsider en allieret.
-          Sammen startede de organisationen, som de kaldte Posefolksprojektet, og
-          som senere skulle blive kendt som Projekt Udenfor. <br />
-          <br />I 1998 overgik Projekt Udenfor fra at være en privatejet
-          virksomhed til at blive en selvejende institution (en
-          ikke-erhvervsdrivende fond). Ved samme lejlighed blev et stiftende og
-          konstituerende bestyrelsesmøde afholdt, hvor organisationens
-          vedtægter, herunder fondens formål, blev nedfældet. <br />
-          <br /> Lige siden har vi i Projekt Udenfor arbejdet med og for samfundets
-          absolut udstødte. Gennem gadeplansarbejde, dokumentation og formidling af
-          viden samt ved at føre en kritisk debat forsøger vi at skabe forandring
-          for hjemløse borgere, der lever en forpint og isoleret tilværelse på gaden,
-          og som ikke får den hjælp, som de har behov for og ret til i og af det offentlige
-          hjælpesystem.
-        </Text>
+        >
+          <Text style="p">
+            Dr. med. Preben Brandt, som forinden havde været ansat som
+            Socialoverlæge på Københavns Kommunes store, gamle
+            hjemløseinstitution Sundholm, havde i flere år udført opsøgende
+            arbejde på gaden uden for sin arbejdstid. På natlige vandringer og
+            sene aftenture opsøgte han mennesker, der var hjemløse – særligt de,
+            der kæmpede med svær psykisk sygdom. Han lyttede og forholdt sig til
+            dem, gav dem omsorg, tilbød hjælp og nedskrev systematisk sine
+            erfaringer.
+            <br /><br />
+            Preben Brandt ville gøre noget ved den lidelse og uret, som han fandt
+            blandt hjemløse borgere, der var overladt til sig selv på gaden i Danmark.
+            Han ville afhjælpe lidelsen hos det enkelte individ, og han ville skabe
+            forandring i samfundet. Hos socialarbejderen Torben Pilely, der også forsøgte
+            sig med opsøgende gadeplansarbejde i sin fritid, fandt Preben Brandt omsider
+            en allieret. Sammen startede de organisationen, som de kaldte Posefolksprojektet,
+            og som senere skulle blive kendt som Projekt Udenfor.
+            <br /><br />
+            I 1998 overgik Projekt Udenfor fra at være en privatejet virksomhed til
+            at blive en selvejende institution (en ikke-erhvervsdrivende fond). Ved
+            samme lejlighed blev et stiftende og konstituerende bestyrelsesmøde afholdt,
+            hvor organisationens vedtægter, herunder fondens formål, blev nedfældet.
+            <br /><br />
+            Lige siden har vi i Projekt Udenfor arbejdet med og for samfundets absolut
+            udstødte. Gennem gadeplansarbejde, dokumentation og formidling af viden
+            samt ved at føre en kritisk debat forsøger vi at skabe forandring for
+            hjemløse borgere, der lever en forpint og isoleret tilværelse på gaden,
+            og som ikke får den hjælp, som de har behov for og ret til i og af det
+            offentlige hjælpesystem.
+          </Text>
+        </div>
+        <!-- Tekst 3 slut -->
       </div>
-      <!-- Tekst 3 slut -->
-    </div>
+    </section>
+    <!-- HISTORIE + BILLEDER SLUT  -->
+
+    <!--  BLIV FRIVILLIG START  -->
     <section>
       <div
-        class="grid grid-cols-6 md:grid md:grid-cols-12 md:p-[var(--space-desk-xl)]"
+        class="grid grid-cols-6 md:grid-cols-12
+           md:p-[var(--space-desk-xl)]
+           md:mb-[var(--space-desk-xl)]"
       >
+        <!-- Frivillig: tekst start -->
         <div
-          class="col-span-4 col-start-2 md:col-span-6 md:col-start-2 pb-[var(--space-mob-xl)]"
+          class="col-span-4 col-start-2
+             md:col-span-5 md:col-start-2
+             pb-[var(--space-mob-xl)]"
         >
           <div class="pt-[var(--space-mob-xl)] pb-[var(--space-mob-sm)]">
-            <Heading style="h4" stylingclasses="text-secondary"
-              >Bliv frivillig</Heading
-            >
+            <Heading style="h4" stylingclasses="text-secondary">
+              Bliv frivillig
+            </Heading>
 
-            <Text style="p"
-              >Vi søger frivillige, der har lyst til at dedikere 2 x 4 timer om
+            <Text style="p">
+              Vi søger frivillige, der har lyst til at dedikere 2 x 4 timer om
               måneden til at tilbyde et måltid mad, andre fornødenheder og
-              omsorg til hjemløse borgere på gaden via Den Mobile Café. <br />
-              <br /> Som frivillig i Den Mobile Café får du mulighed for at engagere
-              dig i et meningsfyldt arbejde og gøre en forskel for nogle af de dårligst
+              omsorg til hjemløse borgere på gaden via Den Mobile Café.
+              <br /><br />
+              Som frivillig i Den Mobile Café får du mulighed for at engagere dig
+              i et meningsfyldt arbejde og gøre en forskel for nogle af de dårligst
               stillede mennesker i København.
               <br />
-              <Link href="#"> Du kan læse mere om Den Mobile Café her.</Link>
-              <br />
-              <br /> Vagterne ligger fra kl. 17 – 21 i hverdagene og starter og slutter
-              på vores kontor i Ravnsborggade i København N. <br />
-              <br /> Din baggrund er ikke afgørende. Vi har en bred vifte af fagligheder
+              <Link href="#">Du kan læse mere om Den Mobile Café her.</Link>
+              <br /><br />
+              Vagterne ligger fra kl. 17 – 21 i hverdagene og starter og slutter på
+              vores kontor i Ravnsborggade i København N.
+              <br /><br />
+              Din baggrund er ikke afgørende. Vi har en bred vifte af fagligheder
               repræsenteret i frivilliggruppen. Om vi er et match, finder vi ud af
               til en samtale. Dit engagement i Den Mobile Café kræver, at du er mødestabil
               og kan lide at tale med mennesker. Det er en fordel, men ikke et krav,
-              at du har kørekort. <br />
-              <br /> Ring eller skriv til Christian, hvis du er interesseret eller
-              har spørgsmål (se kontakt oplysninger længere nede)
+              at du har kørekort.
+              <br /><br />
+              Ring eller skriv til Christian, hvis du er interesseret eller har spørgsmål
+              (se kontaktoplysninger længere nede).
             </Text>
           </div>
+
           <div class="mt-[var(--space-mob-sm)]">
             <Button href="/stoet" variant="onsand">KONTAKT</Button>
           </div>
         </div>
+        <!-- Frivillig: tekst slut -->
+
+        <!-- Frivillig: billeder start -->
         <div
-          class="col-span-4 col-start-2 mb-[var(--space-mob-xl)] md:col-span-3 md:col-start-9 md:row-span-2 md:row-start-1 md:mb-0"
+          class="col-span-4 col-start-2
+             mb-[var(--space-mob-xl)]
+             md:col-span-3 md:col-start-8
+             md:row-span-2 md:row-start-1
+             md:mb-0"
         >
           <img
             src="/img/christian.png"
-            alt="Kristian"
-            class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-xxl)] md:mt-[var(--space-desk-xl)] md:place-self-end"
+            alt="Christian fra Projekt Udenfor"
+            class="mb-[var(--space-mob-xl)]
+               md:mb-[var(--space-desk-xxl)]
+               md:mt-[var(--space-desk-xl)]
+               md:place-self-end"
           />
-
           <img
             src="/img/to_frivillige.png"
-            alt="to frivillige der arbejder"
-            class=""
+            alt="To frivillige fra Den Mobile Café"
           />
         </div>
+        <!-- Frivillig: billeder slut -->
       </div>
     </section>
-    <!-- Om os: banner start -->
-    <div
-      class="mb-[var(--space-mob-xxl)] ol-span-full md:col-span-12 md:mb-[var(--space-desk-xl)]"
-    >
-      <Banner>
-        Godt en tredjedel af alle borgere i hjemløshed er unge mellem 18 og 29
-        år.</Banner
-      >
-    </div>
-    <!-- Om os: banner slut -->
+    <!--  BLIV FRIVILLIG SLUT  -->
 
-    <!-- Om os: sideoverskrift "Medarbejdere" start -->
-    <div class="mb-[var(--space-mob-md)] grid grid-cols-6 md:grid-cols-12">
-      <div class="col-start-2 col-span-4 md:col-start-2 md:col-span-4">
-        <Heading style="h3" stylingclasses="text-secondary "
-          >Medarbejdere</Heading
+    <section>
+      <!-- Om os: banner start -->
+      <div
+        class="mb-[var(--space-mob-xxl)] ol-span-full md:col-span-12 md:mb-[var(--space-desk-xl)]"
+      >
+        <Banner>
+          Godt en tredjedel af alle borgere i hjemløshed er unge mellem 18 og 29
+          år.</Banner
         >
       </div>
-    </div>
-    <!-- Om os: sideoverskrift "Medarbejdere" slut -->
+      <!-- Om os: banner slut -->
 
-    <!-- Om os: sektion "Ledelse og administration" start -->
-    <PersonerSektionCard title="Ledelse og administration">
-      <!-- PersonCard start -->
-      <PersonCard
-        title="Bo Heide-Joechimsen"
-        img="/img/bo.png"
-        alt_tekst="Billede af Bo"
-        job="Inspektør"
-        mail="bj@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
+      <!-- Om os: sideoverskrift "Medarbejdere" start -->
+      <div class="mb-[var(--space-mob-md)] grid grid-cols-6 md:grid-cols-12">
+        <div class="col-start-2 col-span-4 md:col-start-2 md:col-span-4">
+          <Heading style="h3" stylingclasses="text-secondary "
+            >Medarbejdere</Heading
+          >
+        </div>
+      </div>
+      <!-- Om os: sideoverskrift "Medarbejdere" slut -->
 
-      <!-- PersonCard start -->
-      <PersonCard
-        title="Anette M. Tullberg"
-        img="/img/anette.png"
-        alt_tekst="Billede af anette"
-        job="Administrations- og personaleansvarlig"
-        mail="amt@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
-    </PersonerSektionCard>
-    <!-- Om os: sektion "Ledelse og administration" slut -->
+      <!-- Om os: sektion "Ledelse og administration" start -->
+      <PersonerSektionCard title="Ledelse og administration">
+        <!-- PersonCard start -->
+        <PersonCard
+          title="Bo Heide-Joechimsen"
+          img="/img/bo.png"
+          alt_tekst="Billede af Bo"
+          job="Inspektør"
+          mail="bj@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
 
-    <!-- Om os: sektion "Gade" start -->
-    <PersonerSektionCard title="Gade">
-      <PersonCard
-        title="Bo Heide-Joechimsen"
-        img="/img/bo.png"
-        alt_tekst="Billede af Bo"
-        job="Inspektør"
-        mail="bj@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
+        <!-- PersonCard start -->
+        <PersonCard
+          title="Anette M. Tullberg"
+          img="/img/anette.png"
+          alt_tekst="Billede af anette"
+          job="Administrations- og personaleansvarlig"
+          mail="amt@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
+      </PersonerSektionCard>
+      <!-- Om os: sektion "Ledelse og administration" slut -->
 
-      <!-- PersonCard start -->
-      <PersonCard
-        title="Anette M. Tullberg"
-        img="/img/anette.png"
-        alt_tekst="Billede af Anette"
-        job="Administrations- og personaleansvarlig"
-        mail="amt@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
+      <!-- Om os: sektion "Gade" start -->
+      <PersonerSektionCard title="Gade">
+        <PersonCard
+          title="Bo Heide-Joechimsen"
+          img="/img/bo.png"
+          alt_tekst="Billede af Bo"
+          job="Inspektør"
+          mail="bj@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
 
-      <!-- PersonCard start -->
-      <PersonCard
-        title="Bo Heide-Joechimsen"
-        img="/img/bo.png"
-        alt_tekst="Billede af bo"
-        job="Inspektør"
-        mail="bj@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
+        <!-- PersonCard start -->
+        <PersonCard
+          title="Anette M. Tullberg"
+          img="/img/anette.png"
+          alt_tekst="Billede af Anette"
+          job="Administrations- og personaleansvarlig"
+          mail="amt@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
 
-      <!-- PersonCard start -->
-      <PersonCard
-        title="Anette M. Tullberg"
-        img="/img/anette.png"
-        alt_tekst="Billede af anette"
-        job="Administrations- og personaleansvarlig"
-        mail="amt@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
+        <!-- PersonCard start -->
+        <PersonCard
+          title="Bo Heide-Joechimsen"
+          img="/img/bo.png"
+          alt_tekst="Billede af bo"
+          job="Inspektør"
+          mail="bj@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
 
-      <!-- PersonCard start -->
-      <PersonCard
-        title="Bo Heide-Joechimsen"
-        img="/img/bo.png"
-        alt_tekst="Billede af bo"
-        job="Inspektør"
-        mail="bj@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
+        <!-- PersonCard start -->
+        <PersonCard
+          title="Anette M. Tullberg"
+          img="/img/anette.png"
+          alt_tekst="Billede af anette"
+          job="Administrations- og personaleansvarlig"
+          mail="amt@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
 
-      <!-- PersonCard start -->
-      <PersonCard
-        title="Anette M. Tullberg"
-        img="/img/anette.png"
-        alt_tekst="Billede af anette"
-        job="Administrations- og personaleansvarlig"
-        mail="amt@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
-    </PersonerSektionCard>
-    <!-- Om os: sektion "Gade" slut -->
+        <!-- PersonCard start -->
+        <PersonCard
+          title="Bo Heide-Joechimsen"
+          img="/img/bo.png"
+          alt_tekst="Billede af bo"
+          job="Inspektør"
+          mail="bj@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
 
-    <!-- Om os: sektion "Viden og formidling" start -->
-    <PersonerSektionCard title="Viden og formidling">
-      <!-- PersonCard start -->
-      <PersonCard
-        title="Bo Heide-Joechimsen"
-        img="/img/bo.png"
-        alt_tekst="Billede af bo"
-        job="Inspektør"
-        mail="bj@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
+        <!-- PersonCard start -->
+        <PersonCard
+          title="Anette M. Tullberg"
+          img="/img/anette.png"
+          alt_tekst="Billede af anette"
+          job="Administrations- og personaleansvarlig"
+          mail="amt@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
+      </PersonerSektionCard>
+      <!-- Om os: sektion "Gade" slut -->
 
-      <!-- PersonCard start -->
-      <PersonCard
-        title="Anette M. Tullberg"
-        img="/img/anette.png"
-        alt_tekst="Billede af anette"
-        job="Administrations- og personaleansvarlig"
-        mail="amt@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
+      <!-- Om os: sektion "Viden og formidling" start -->
+      <PersonerSektionCard title="Viden og formidling">
+        <!-- PersonCard start -->
+        <PersonCard
+          title="Bo Heide-Joechimsen"
+          img="/img/bo.png"
+          alt_tekst="Billede af bo"
+          job="Inspektør"
+          mail="bj@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
 
-      <!-- PersonCard start -->
-      <PersonCard
-        title="Bo Heide-Joechimsen"
-        img="/img/bo.png"
-        alt_tekst="Billede af bo"
-        job="Inspektør"
-        mail="bj@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
+        <!-- PersonCard start -->
+        <PersonCard
+          title="Anette M. Tullberg"
+          img="/img/anette.png"
+          alt_tekst="Billede af anette"
+          job="Administrations- og personaleansvarlig"
+          mail="amt@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
 
-      <!-- PersonCard start -->
-      <PersonCard
-        title="Anette M. Tullberg"
-        img="/img/anette.png"
-        alt_tekst="Billede af anette"
-        job="Administrations- og personaleansvarlig"
-        mail="amt@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
-    </PersonerSektionCard>
-    <!-- Om os: sektion "Viden og formidling" slut -->
+        <!-- PersonCard start -->
+        <PersonCard
+          title="Bo Heide-Joechimsen"
+          img="/img/bo.png"
+          alt_tekst="Billede af bo"
+          job="Inspektør"
+          mail="bj@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
 
-    <!-- Om os: sektion "Den mobile cafe" start -->
-    <PersonerSektionCard title="Den mobile cafe">
-      <!-- PersonCard start -->
-      <PersonCard
-        title="Bo Heide-Joechimsen"
-        img="/img/bo.png"
-        alt_tekst="Billede af bo"
-        job="Inspektør"
-        mail="bj@udenfor.dk"
-        number="33 42 76 00"
-        <
-        main
-      />
-      <!-- PersonCard slut -->
-    </PersonerSektionCard>
-    <!-- Om os: sektion "Den mobile cafe" slut -->
+        <!-- PersonCard start -->
+        <PersonCard
+          title="Anette M. Tullberg"
+          img="/img/anette.png"
+          alt_tekst="Billede af anette"
+          job="Administrations- og personaleansvarlig"
+          mail="amt@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
+      </PersonerSektionCard>
+      <!-- Om os: sektion "Viden og formidling" slut -->
+
+      <!-- Om os: sektion "Den mobile cafe" start -->
+      <PersonerSektionCard title="Den mobile cafe">
+        <!-- PersonCard start -->
+        <PersonCard
+          title="Bo Heide-Joechimsen"
+          img="/img/bo.png"
+          alt_tekst="Billede af bo"
+          job="Inspektør"
+          mail="bj@udenfor.dk"
+          number="33 42 76 00"
+          <
+          main
+        />
+        <!-- PersonCard slut -->
+      </PersonerSektionCard>
+      <!-- Om os: sektion "Den mobile cafe" slut -->
+    </section>
+    <PopUp />
   </main>
 </MainLayout>
