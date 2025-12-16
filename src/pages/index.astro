@@ -1,8 +1,5 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
@@ -34,7 +31,7 @@ import TextBox from "../components/TextBox.astro";
       >
         <Heading style="h4">Vi hjælper samfundets mest udstødte</Heading>
       </div>
-      <Button variant="onsand">Støt</Button>
+      <Button href="/stoet" variant="onsand">Støt</Button>
     </div>
     <img
       src="/img/index_hero_mobil.png"
@@ -204,5 +201,48 @@ import TextBox from "../components/TextBox.astro";
       </section>
     </section>
     <!-- Slut Tekst -->
+
+    <!-- Start infografik -->
+    <section
+      class="col-span-full bg-secondary text-white mb-[var(--space-mob-xxl)]"
+    >
+      <div
+        class="col-start-2 col-span-4 md:col-start-3 md:col-span-10
+           py-[var(--space-mob-xxl)] md:py-[var(--space-desk-xl)]"
+      >
+        <!-- Top: 8% + tekst -->
+        <div class="grid grid-cols-6 md:grid-cols-12">
+          <div class="col-start-2 col-span-1 md:col-start-3 md:col-span-2">
+            <Heading style="h1" class="leading-none tracking-0">8%</Heading>
+          </div>
+
+          <div
+            class="col-start-2 col-span-4 md:col-start-5 md:col-span-6 pb-[var(--space-mob-md)] md:pt-[var(--space-desk-xxl)] md:pl-6"
+          >
+            <Heading style="h4">
+              af hjemløse i Danmark lever på gaden som gadesovere
+            </Heading>
+          </div>
+        </div>
+
+        <!-- Grafikken -->
+        <div
+          class="pb-[var(--space-mob-lg)] md:pb-[var(--space-desk-lg)]
+             flex justify-center"
+        >
+          <img
+            src="/img/infografik.svg"
+            alt="Tegnet infografik af huse og bænke"
+            class="w-full max-w-[300px] md:max-w-[760px]"
+          />
+        </div>
+
+        <!-- CTA -->
+        <div class="flex justify-center">
+          <Button href="/stoet" variant="onred">DONÉR</Button>
+        </div>
+      </div>
+    </section>
+    <!-- Slut infografik -->
   </main>
 </MainLayout>
