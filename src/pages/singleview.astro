@@ -1,0 +1,161 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Banner from "../components/Banner.astro";
+---
+
+<MainLayout title="singleview">
+  <main class="grid grid-cols-6 md:grid-cols-12">
+    <!-- Start Hero -->
+
+    <!-- Slut Hero -->
+
+    <!-- Start indhold -->
+    <section class="col-start-2 col-span-4 md:col-start-2 md:col-span-10">
+      <!-- DESKTOP KOLONNER-->
+      <div class="hidden md:grid md:grid-cols-12 md:pb-[var(--space-desk-xl)]">
+        <!-- DESK VENSTRE KOLONNE - billeder -->
+        <div
+          class="md:col-start-1 md:col-span-4 flex flex-col gap-[var(--space-desk-xxl)]"
+        >
+          <img
+            src="/img/gadeplansarbejde.png"
+            alt=""
+            class="w-[415px] h-[604px]"
+          />
+          <img
+            src="/img/rådhuspladsen.png"
+            alt=""
+            class="w-[415px] h-[604px]"
+          />
+        </div>
+
+        <!-- DESK HØJRE KOLONNE - tekst -->
+        <div
+          class="md:col-start-6 md:col-span-6 flex flex-col gap-[var(--space-desk-xl)] md:w-[691px]"
+        >
+          <div>
+            <div class="text-secondary pb-[var(--space-desk-xs)]">
+              <Heading style="h4">Opsøgende gadeplansarbejde</Heading>
+            </div>
+            <Text>
+              Det er som udgangspunkt os, der kommer til borgerne på gaden og
+              ikke omvendt. Vi opsøger mennesker i det offentlige rum, som er i
+              en situation, der giver anledning til bekymring, arbejder på at
+              skabe kontakt og afklare deres hjælpebehov.
+              <br /><br />
+              Vi møder gadesoverne i deres vante omgivelser, med respekt for deres
+              rutiner og under de forhold, der er mest givende for en god kontakt
+              med den enkelte.
+            </Text>
+          </div>
+
+          <div>
+            <div class="text-secondary pb-[var(--space-desk-xs)]">
+              <Heading style="h4">Udgående gadeplansarbejde</Heading>
+            </div>
+            <Text>
+              Mange af de mennesker, vi møder på gaden, har utallige eksempler
+              på svigt med i bagagen, og derfor kræver det ofte langmodighed at
+              få lov til at yde den rette hjælp.
+              <br /><br />
+              Vi arbejder på at opbygge en tillid, der betyder, at borgerne er trygge
+              ved at give udtryk for egne ønsker for fremtiden – nær eller fjern.
+              Det kan være ønsket om at få et telt, en sovepose eller et måltid mad.
+              Det kan være ønsket om at komme i kontakt med et familiemedlem eller
+              en bekendt. Det kan være ønsket om at komme til en tandlæge, at komme
+              indenfor og sove, at komme i bolig, at finde et job eller at komme tilbage
+              til et eventuelt andet hjemland.
+              <br /><br />
+              Vi bygger bro til relevante hjælpeforanstaltninger for den enkelte,
+              samarbejder med andre civilsamfundsorganisationer, herberger, kommuner
+              og sundhedssystemet, og vi er ofte bindeleddet, når forskellige systemer
+              skal tale sammen.
+              <br /><br />
+              Gadeplansindsatsen i Projekt Udenfor går altid hånd i hånd med organisationens
+              arbejde for at indsamle og formidle viden om hjemløshed.
+              <br /><br />
+              Desuden supplerer vi jævnligt den opsøgende indsats overfor isolerede
+              hjemløse gadesovere med mere eksperimenterende tidsbegrænsede projekter.
+              Gennem projekterne afhjælper og undersøger vi behov og forhold for andre
+              grupper af hjemløse, som af den ene eller anden grund ikke kan eller
+              vil modtage en relevant hjælp. Du kan læse mere om vores projekter under
+              fanen “Om vores arbejde”.
+            </Text>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBIL - tekst + billede + tekst + billede -->
+      <div class="md:hidden flex flex-col gap-[var(--space-mob-xxl)]">
+        <div>
+          <div class="text-secondary pb-[var(--space-mob-sm)]">
+            <Heading style="h4">Opsøgende gadeplansarbejde</Heading>
+          </div>
+          <Text>
+            Det er som udgangspunkt os, der kommer til borgerne på gaden og ikke
+            omvendt. Vi opsøger mennesker i det offentlige rum, som er i en
+            situation, der giver anledning til bekymring, arbejder på at skabe
+            kontakt og afklare deres hjælpebehov.
+            <br /><br />
+            Vi møder gadesoverne i deres vante omgivelser, med respekt for deres rutiner
+            og under de forhold, der er mest givende for en god kontakt med den enkelte.
+          </Text>
+        </div>
+
+        <img
+          src="/img/gadeplansarbejde.png"
+          alt=""
+          class="w-[282px] h-[410px]"
+        />
+
+        <div>
+          <div class="text-secondary pb-[var(--space-mob-sm)]">
+            <Heading style="h4">Udgående gadeplansarbejde</Heading>
+          </div>
+          <Text>
+            Mange af de mennesker, vi møder på gaden, har utallige eksempler på
+            svigt med i bagagen, og derfor kræver det ofte langmodighed at få
+            lov til at yde den rette hjælp.
+            <br /><br />
+            Vi arbejder på at opbygge en tillid, der betyder, at borgerne er trygge
+            ved at give udtryk for egne ønsker for fremtiden – nær eller fjern. Det
+            kan være ønsket om at få et telt, en sovepose eller et måltid mad. Det
+            kan være ønsket om at komme i kontakt med et familiemedlem eller en bekendt.
+            Det kan være ønsket om at komme til en tandlæge, at komme indenfor og
+            sove, at komme i bolig, at finde et job eller at komme tilbage til et
+            eventuelt andet hjemland.
+            <br /><br />
+            Vi bygger bro til relevante hjælpeforanstaltninger for den enkelte, samarbejder
+            med andre civilsamfundsorganisationer, herberger, kommuner og sundhedssystemet,
+            og vi er ofte bindeleddet, når forskellige systemer skal tale sammen.
+            <br /><br />
+            Gadeplansindsatsen i Projekt Udenfor går altid hånd i hånd med organisationens
+            arbejde for at indsamle og formidle viden om hjemløshed.
+            <br /><br />
+            Desuden supplerer vi jævnligt den opsøgende indsats overfor isolerede
+            hjemløse gadesovere med mere eksperimenterende tidsbegrænsede projekter.
+            Gennem projekterne afhjælper og undersøger vi behov og forhold for andre
+            grupper af hjemløse, som af den ene eller anden grund ikke kan eller vil
+            modtage en relevant hjælp. Du kan læse mere om vores projekter under fanen
+            “Om vores arbejde”.
+          </Text>
+        </div>
+
+        <img
+          src="/img/rådhuspladsen.png"
+          alt=""
+          class="w-[282px] h-[410px] pb-[var(--space-mob-xxl)]"
+        />
+      </div>
+    </section>
+    <!-- Slut indhold -->
+
+    <!-- Start banner -->
+    <div class="col-span-full md:pb-[var(--space-desk-lg)]">
+      <Banner> 50 % af gadesoverne har været hjemløse i mere end 2 år. </Banner>
+    </div>
+    <!-- Slut banner -->
+  </main>
+</MainLayout>
