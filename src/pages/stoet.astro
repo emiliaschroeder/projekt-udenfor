@@ -51,15 +51,17 @@ import TextBox from "../components/TextBox.astro";
             <Heading style="h4"
               >Hjælp os med at <br />forbedre vilkårene</Heading
             >
-
-            <Text
-              style="p"
-              stylingclasses="text-white"
-              class="mt-[var(--space-mob-lg)]"
-            >
-              I Projekt Udenfor er vi afhængige af private og offentlige bidrag
-              for at kunne forbedre vilkårene for personer i gadehjemløshed.
-            </Text>
+            <div class="mt-[var(--space-mob-sm)] md:mt-[var(--space-desk-sm)]">
+              <Text
+                style="p"
+                stylingclasses="text-white"
+                class="mt-[var(--space-mob-lg)]"
+              >
+                I Projekt Udenfor er vi afhængige af private og offentlige
+                bidrag for at kunne forbedre vilkårene for personer i
+                gadehjemløshed.
+              </Text>
+            </div>
 
             <!-- Digtsamlinger -->
             <div
@@ -83,7 +85,7 @@ import TextBox from "../components/TextBox.astro";
               Støt og modtag 2 gratis digtsamlinger
             </Heading>
 
-            <div class="mt-[var(--space-mob-lg)] md:mt-[var(--space-desk-sm)]">
+            <div class="mt-[var(--space-mob-sm)] md:mt-[var(--space-desk-sm)]">
               <Text style="p" stylingclasses="text-white">
                 Du kan hjælpe os med at forbedre forholdene for hjemløse
                 borgere, som lever på gaden. Lige nu sender vi dig to
@@ -106,7 +108,7 @@ import TextBox from "../components/TextBox.astro";
 
             <!-- Persondata -->
             <div
-              class="gap-[var(--space-mob-sm)] md:gap-[var(--space-desk-sm)] mt-[var(--space-mob-xxl)] md:mt-[var(--space-desk-xl)] text-white"
+              class="gap-[var(--space-mob-sm)] md:gap-[var(--space-desk-sm)] mt-[var(--space-mob-md)] md:mt-[var(--space-desk-md)] text-white"
             >
               <Text style="p">Persondata</Text>
 
@@ -127,10 +129,105 @@ import TextBox from "../components/TextBox.astro";
       </div>
     </section>
     <!-- Start indhold + form -->
+    <section class="col-span-full bg-primary">
+      <div class="grid grid-cols-6 md:grid-cols-12">
+        <div class="col-span-full md:col-start-2 md:col-span-10">
+          <div
+            class="grid grid-cols-6 md:grid-cols-12
+               py-[var(--space-mob-xxl)] md:py-[var(--space-desk-xl)]"
+          >
+            <!-- INDHOLD WRAPPER: midt på mobil -->
+            <div
+              class="col-start-2 col-span-4
+                 md:col-start-1 md:col-span-12
+                 grid grid-cols-1 md:grid-cols-12
+                 gap-[var(--space-mob-lg)] md:gap-[var(--space-desk-xl)]"
+            >
+              <!-- TEKST + LISTE -->
+              <div class="md:col-span-6 text-black">
+                <Heading style="h4" stylingclasses="text-secondary"
+                  >Din donation går til :</Heading
+                >
+
+                <ul
+                  class="mt-[var(--space-mob-sm)] md:mt-[var(--space-desk-lg)]
+                     space-y-[var(--space-mob-xl)] md:space-y-[var(--space-desk-md)]"
+                >
+                  <li class="flex items-start gap-[var(--space-mob-lg)]">
+                    <img
+                      src="/img/arrow_black.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="mt-3 w-10 shrink-0"
+                    />
+                    <div>
+                      <Text style="pEm">Livsnødvendigheder</Text>
+                      <Text style="p">som soveposer, telte, og mad.</Text>
+                    </div>
+                  </li>
+
+                  <li class="flex items-start gap-[var(--space-mob-lg)]">
+                    <img
+                      src="/img/arrow_black.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="mt-3 w-8 shrink-0"
+                    />
+                    <div>
+                      <Text style="pEm"
+                        >Akut hjælp og midlertidige overnatninger</Text
+                      >
+                      <Text style="p">i nødsituationer.</Text>
+                    </div>
+                  </li>
+
+                  <li class="flex items-start gap-[var(--space-mob-lg)]">
+                    <img
+                      src="/img/arrow_black.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="mt-3 w-8 shrink-0"
+                    />
+                    <div>
+                      <Text style="pEm">Aktiviteter og små oplevelser</Text>
+                      <Text style="p">der giver livskvalitet og nærvær.</Text>
+                    </div>
+                  </li>
+
+                  <li class="flex items-start gap-[var(--space-mob-lg)]">
+                    <img
+                      src="/img/arrow_black.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="mt-3 w-8 shrink-0"
+                    />
+                    <div>
+                      <Text style="pEm">Opsøgende gadeplansarbejde</Text>
+                      <Text style="p">direkte på gaden.</Text>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- BILLEDE (samme midterkolonner på mobil) -->
+              <figure class="md:col-span-6 md:flex md:justify-end">
+                <img
+                  src="/public/img/måltid.png"
+                  alt="Et måltid bliver rakt frem"
+                  class="w-full"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Start Tekst -->
     <section class="col-start-2 col-span-4 md:col-start-2 md:col-span-10">
-      <section class="md:grid md:grid-cols-12">
+      <section
+        class="md:grid md:grid-cols-12 mt-[var(--space-mob-sm)] md:mt-[var(--space-desk-sm)]"
+      >
         <div class="md:col-start-1">
           <TextBox
             sectionTitle="Andre donationer"
