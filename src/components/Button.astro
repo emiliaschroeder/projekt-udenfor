@@ -1,13 +1,18 @@
 ---
 import Heading from "./Heading.astro";
-// Henter parametrene fra Astro.props
-const { variant = "onsand" } = Astro.props;
 
-//Definer den styling (Tailwind classes, der gør sig gældende for alle knapper)
-const buttonStyling =
-  "inline-flex justify-center items-center leading-none md:whitespace-nowrap";
+// Props
+const {
+  variant = "onsand",
+  href,
+  ariaLabel,
+  target,
+  rel,
+  type = "button",
+} = Astro.props;
 
-//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter
+const buttonStyling = "inline-flex justify-center items-center leading-none";
+
 const variantClasses = {
   onsand:
     "px-7 py-2 md:px-16 md:py-3 bg-accent text-secondary shadow-[var(--shadow-offset-sm)_var(--color-secondary)] md:shadow-[var(--shadow-offset-md)_var(--color-secondary)] hover:bg-secondary hover:text-accent hover:shadow-[var(--shadow-offset-md)_var(--color-accent)]",
@@ -18,11 +23,36 @@ const variantClasses = {
   btnmenu:
     "w-28 h-8 md:w-36 md:h-12 px-7 py-2 md:px-9 md:py-2.5 bg-accent text-secondary shadow-[var(--shadow-offset-xs)_var(--color-primary)] md:shadow-[var(--shadow-offset-sm)_var(--color-primary)] hover:bg-primary hover:text-secondary hover:shadow-[var(--shadow-offset-sm)_var(--color-accent)]",
 };
+
+// sikker fallback hvis variant er forkert
+const classes = [
+  buttonStyling,
+  variantClasses[variant] ?? variantClasses.onsand,
+];
+
+// hvis target="_blank", så sæt en sikker default rel
+const computedRel =
+  target === "_blank" ? (rel ? rel : "noopener noreferrer") : rel;
 ---
 
-<!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
-<button class:list={[buttonStyling, variantClasses[variant]]}>
-  <Heading style="cta">
-    <slot />
-  </Heading>
-</button>
+{
+  href ? (
+    <a
+      href={href}
+      class:list={classes}
+      aria-label={ariaLabel}
+      target={target}
+      rel={computedRel}
+    >
+      <Heading style="cta">
+        <slot />
+      </Heading>
+    </a>
+  ) : (
+    <button class:list={classes} type={type} aria-label={ariaLabel}>
+      <Heading style="cta">
+        <slot />
+      </Heading>
+    </button>
+  )
+}
