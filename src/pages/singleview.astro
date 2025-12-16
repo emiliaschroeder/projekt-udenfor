@@ -3,12 +3,67 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Banner from "../components/Banner.astro";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout title="singleview">
   <main class="grid grid-cols-6 md:grid-cols-12">
     <!-- Start Hero -->
+    <section class="col-span-full bg-primary">
+      <div
+        class="col-span-full px-[var(--space-mob-md)] md:px-0 md:col-start-2 md:col-span-10"
+      >
+        <div class="grid grid-cols-6 md:grid-cols-12 items-end md:pl-10">
+          <!-- Heading -->
+          <div
+            class="col-span-full md:col-span-7 text-secondary leading-tight md:leading-[170px] pt-2 pb-2"
+          >
+            <Heading style="h2">Gadeplans <br /> arbejde</Heading>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- start rød baggrund Indhold -->
+    <section
+      class="bg-secondary col-span-full grid grid-cols-6 md:grid-cols-12 pt-10 pb-80 md: md:pb-20 md:pt-5 mb-[var(--space-mob-xxl)] md:mb-[var(--space-desk-xl)]"
+    >
+      <div
+        class="col-start-2 col-span-4 w-[283px] md:col-start-1 md:pl-10 md:col-span-6 md:w-[753px]"
+      >
+        <div
+          class="text-primary pb-[var(--space-mob-sm)] md:pt-[var(--space-desk-xs)]"
+        >
+          <Heading style="h4">Hvad er gadeplansarbejde?</Heading>
+        </div>
+
+        <div
+          class="text-white pb-[var(--space-mob-sm)] md:pb-[var(--space-desk-sm)] md:w-[500px]"
+        >
+          <Text
+            >I dagens, aftenens og nattens timer er Projekt Udenfor på gaden i
+            København.
+            <br /><br />
+            Vi observerer byen og stiller os til rådighed overfor de dårligst stillede
+            hjemløse borgere. Gadeplansindsatsen er rettet mod hjemløse gadesovere,
+            der ikke får den hjælp, de har behov for, i de etablerede offentlige systemer.
+          </Text>
+        </div>
+        <div>
+          <Button variant="onred">bliv frivillig</Button>
+        </div>
+      </div>
+    </section>
+    <!-- Billede -->
+    <div
+      class="col-span-full md:col-start-4 flex justify-end z-10 md:z-30 overflow-visible"
+    >
+      <img
+        src="/img/hero_omos.png"
+        alt="gadeplansarbejde"
+        class="w-[120vw] max-w-none -ml-[10vw] -mt-100 md:w-[1056px] md:h-[800px] md:ml-0 md:-mt-203"
+      />
+    </div>
     <!-- Slut Hero -->
 
     <!-- Start indhold -->
