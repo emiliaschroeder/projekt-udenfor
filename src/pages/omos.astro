@@ -11,6 +11,63 @@ import TextBox from "../components/TextBox.astro";
 
 <MainLayout title="Om os">
   <main>
+    <section>
+      <div class="grid grid-cols-6">
+        <!-- Om os: titel start -->
+        <div
+          class="col-start-1 p-[var(--space-mob-md)] col-span-4 text-secondary"
+        >
+          <Heading style="h2">OM OS</Heading>
+        </div>
+        <!-- Om os: titel slut -->
+
+        <!-- Om os: hero start -->
+        <div
+          class="col-span-full bg-secondary relative h-[496px] md:h-[558px] overflow-hidden mb-[var(--space-mob-xl)]"
+        >
+          <!-- Hero: indhold start -->
+          <div class="col-start-2 col-span-4 grid grid-cols-6 h-full">
+            <div
+              class="col-start-2 col-span-4 text-white relative z-10 pt-[var(--space-mob-xl)]"
+            >
+              <!-- Hero: overskrift start -->
+              <div class="mb-[var(--space-mob-sm)]">
+                <Heading style="h4">Projekt Udenfors historie</Heading>
+              </div>
+              <!-- Hero: overskrift slut -->
+
+              <!-- Hero: brødtekst start -->
+              <div class="mb-[var(--space-mob-sm)]">
+                <Text style="psmall">
+                  Lige så langt tilbage i tiden, hvor der er beretninger om det
+                  sociale liv mellem mennesker, har der været fortællinger om
+                  mennesker, der udstødes af fællesskabet og må leve isoleret
+                  for sig selv …
+                </Text>
+              </div>
+              <!-- Hero: brødtekst slut -->
+
+              <!-- Hero: knap start -->
+              <div class="relative z-10">
+                <Button href="/stoet" variant="onred">BLIV FRIVILLIG</Button>
+              </div>
+              <!-- Hero: knap slut -->
+            </div>
+          </div>
+          <!-- Hero: indhold slut -->
+
+          <!-- Hero: billede start -->
+          <img
+            src="/img/hero_omos.png"
+            alt="Person der sover på gaden"
+            class="absolute bottom-0 right-0 w-full h-[266px] md:h-[686px] object-cover z-0"
+          />
+          <!-- Hero: billede slut -->
+        </div>
+        <!-- Om os: hero slut -->
+      </div>
+    </section>
+
     <div
       class="grid grid-cols-6 md:grid-cols-12 p-[var(--space-mob-xl)]
     md:p-[var(--space-desk-xl)] md:gap-[var(--space-desk-lg)]"
