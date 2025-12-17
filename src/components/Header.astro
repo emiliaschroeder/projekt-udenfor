@@ -29,7 +29,7 @@ const navItems = [
           navItems.map((item) => (
             <a
               href={item.href}
-              class="text-primary transition duration-200 hover:underline hover:decoration-3 hover:underline-offset-5"
+              class="text-primary transition duration-200 hover:underline hover:decoration-3 hover:underline-offset-7"
             >
               <Heading style="cta">{item.label}</Heading>
             </a>
@@ -39,9 +39,7 @@ const navItems = [
 
       <!-- Støt button -->
       <div class="col-span-3 flex items-center justify-end gap-4 md:col-span-2">
-        <a href="/stoet" aria-label="Støt os">
-          <Button variant="btnmenu">STØT</Button>
-        </a>
+        <Button href="/stoet" variant="btnmenu">STØT</Button>
 
         <!-- Burgermenu button -->
         <button
@@ -99,7 +97,7 @@ const navItems = [
 
     <!-- Menu links -->
     <ul
-      class="flex flex-col items-center text-center gap-6 uppercase"
+      class="flex flex-col items-center text-center gap-10 uppercase underline decoration-3 underline-offset-5 text-primary"
       x-transition:enter="transition ease-out duration-300 delay-150"
       x-transition:enter-start="opacity-0 translate-y-4"
       x-transition:enter-end="opacity-100 translate-y-0"
@@ -110,7 +108,7 @@ const navItems = [
           class="transition-colors duration-200 text-primary hover:text-accent"
           x-on:click="showmenu = false"
         >
-          <Heading style="h3">DET VI GØR</Heading>
+          <Heading style="h4">DET VI GØR</Heading>
         </a>
       </li>
       <li>
@@ -119,7 +117,7 @@ const navItems = [
           class="transition-colors duration-200 text-primary hover:text-accent"
           x-on:click="showmenu = false"
         >
-          <Heading style="h3">KONTAKT OS</Heading>
+          <Heading style="h4">KONTAKT OS</Heading>
         </a>
       </li>
       <li>
@@ -128,14 +126,14 @@ const navItems = [
           class="transition-colors duration-200 text-primary hover:text-accent"
           x-on:click="showmenu = false"
         >
-          <Heading style="h3">OM OS</Heading>
+          <Heading style="h4">OM OS</Heading>
         </a>
       </li>
     </ul>
 
     <!-- Støt button i mobil menu -->
     <div class="pb-12 flex justify-center">
-      <Button href="/stoet" variant="btnmenu">Støt</Button>
+      <Button href="/stoet" variant="onred">Støt</Button>
     </div>
   </nav>
 </header>
