@@ -144,7 +144,10 @@ import TextBox from "../components/TextBox.astro";
                  gap-[var(--space-mob-lg)] md:gap-[var(--space-desk-xl)]"
             >
               <!-- TEKST + LISTE -->
-              <div class="md:col-span-6 text-black">
+              <div
+                class="md:col-span-6 text-black staggeranimation"
+                id="stagger"
+              >
                 <Heading style="h4" stylingclasses="text-secondary"
                   >Din donation går til :</Heading
                 >
@@ -153,7 +156,9 @@ import TextBox from "../components/TextBox.astro";
                   class="mt-[var(--space-mob-sm)] md:mt-[var(--space-desk-lg)]
                      space-y-[var(--space-mob-xl)] md:space-y-[var(--space-desk-md)]"
                 >
-                  <li class="flex items-start gap-[var(--space-mob-lg)]">
+                  <li
+                    class="flex items-start gap-[var(--space-mob-lg)] opacity-0"
+                  >
                     <img
                       src="/img/arrow_black.svg"
                       alt=""
@@ -166,7 +171,9 @@ import TextBox from "../components/TextBox.astro";
                     </div>
                   </li>
 
-                  <li class="flex items-start gap-[var(--space-mob-lg)]">
+                  <li
+                    class="flex items-start gap-[var(--space-mob-lg)] opacity-0"
+                  >
                     <img
                       src="/img/arrow_black.svg"
                       alt=""
@@ -181,7 +188,9 @@ import TextBox from "../components/TextBox.astro";
                     </div>
                   </li>
 
-                  <li class="flex items-start gap-[var(--space-mob-lg)]">
+                  <li
+                    class="flex items-start gap-[var(--space-mob-lg)] opacity-0"
+                  >
                     <img
                       src="/img/arrow_black.svg"
                       alt=""
@@ -194,7 +203,9 @@ import TextBox from "../components/TextBox.astro";
                     </div>
                   </li>
 
-                  <li class="flex items-start gap-[var(--space-mob-lg)]">
+                  <li
+                    class="flex items-start gap-[var(--space-mob-lg)] opacity-0"
+                  >
                     <img
                       src="/img/arrow_black.svg"
                       alt=""
@@ -214,7 +225,7 @@ import TextBox from "../components/TextBox.astro";
                 <img
                   src="/public/img/måltid.png"
                   alt="Et måltid bliver rakt frem"
-                  class="w-full"
+                  class="w-full h-auto md:w-[510px] md:h-[415px]"
                 />
               </figure>
             </div>
@@ -285,3 +296,42 @@ import TextBox from "../components/TextBox.astro";
     <!-- Slut Tekst -->
   </main>
 </MainLayout>
+
+<script>
+  /* Import af Motion One bibliotek */
+  import { animate, stagger, inView, scroll } from "motion";
+
+  animate("body", { opacity: [0, 1] }, { duration: 1.3 });
+
+  /* Stagger animation */
+  inView("#stagger", () => {
+    animate(
+      ".staggeranimation li",
+      {
+        opacity: [0, 1],
+        transform: ["translateY(8px)", "translateY(0px)"],
+      },
+      {
+        delay: stagger(0.5, { startDelay: 0.35 }),
+        duration: 0.6,
+      },
+    );
+  });
+
+  window.addEventListener("load", () => {
+    const element = document.querySelector(".parallaxelement");
+    if (!element) return;
+
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      scroll(animate(element, { y: [0, 300] }), {
+        target: element,
+        offset: ["start end", "end start"],
+      });
+    } else {
+      scroll(animate(element, { y: [0, 60] }), {
+        target: element,
+        offset: ["start end", "end start"],
+      });
+    }
+  });
+</script>
