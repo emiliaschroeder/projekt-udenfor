@@ -47,16 +47,12 @@ import ScrollToTop from "../components/ScrollToTop.astro";
         >
           <!-- Venstre kolonne -->
           <section
-            data-animate
-            class="col-start-2 col-span-4 md:col-start-2 md:col-span-5 text-primary opacity-0"
+            class="col-start-2 col-span-4 md:col-start-2 md:col-span-5 text-primary"
           >
             <Heading style="h4"
               >Hjælp os med at <br />forbedre vilkårene</Heading
             >
-            <div
-              data-animate
-              class="mt-[var(--space-mob-sm)] md:mt-[var(--space-desk-sm)] opacity-0"
-            >
+            <div class="mt-[var(--space-mob-sm)] md:mt-[var(--space-desk-sm)]">
               <Text
                 style="p"
                 stylingclasses="text-white"
@@ -106,8 +102,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
 
           <!-- Højre kolonne (form) -->
           <aside
-            data-animate
-            class="col-span-full md:col-start-7 md:col-span-6 px-5 md:px-0 opacity-0"
+            class="col-span-full md:col-start-7 md:col-span-6 px-5 md:px-0"
           >
             <div
               class="bg-primary px-[var(--space-mob-md)] py-[28px] md:p-[var(--space-desk-lg)] md:mt-[120px]"
@@ -117,8 +112,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
 
             <!-- Persondata -->
             <div
-              data-animate
-              class="gap-[var(--space-mob-sm)] md:gap-[var(--space-desk-sm)] mt-[var(--space-mob-md)] md:mt-[var(--space-desk-md)] text-white opacity-0"
+              class="gap-[var(--space-mob-sm)] md:gap-[var(--space-desk-sm)] mt-[var(--space-mob-md)] md:mt-[var(--space-desk-md)] text-white"
             >
               <Text style="p">Persondata</Text>
 
@@ -236,7 +230,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
                 class="md:col-span-6 md:flex md:justify-end opacity-0"
               >
                 <img
-                  src="/public/img/maaltid.png"
+                  src="/img/maaltid.png"
                   alt="Et måltid bliver rakt frem"
                   class="w-full h-auto md:w-[510px] md:h-[415px]"
                 />
@@ -299,6 +293,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
                 sectionSubtitle="Frivilligt arbejde"
                 body="Du kan også støtte vores arbejde ved at engagere dig som frivillig i Den Mobile Café."
                 buttonText="Læs mere"
+                buttonHref="/om-os#frivillig"
               />
             </div>
             <div>
