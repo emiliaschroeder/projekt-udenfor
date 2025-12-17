@@ -23,7 +23,7 @@ import Button from "./Button.astro";
         type="button"
         @click="type = 'fast'"
         :class="type === 'fast' ? 'border-2 border-secondary' : 'border-2 border-transparent'"
-        class="bg-accent py-3 transition"
+        class="bg-accent py-3 transition cursor-pointer"
         :aria-pressed="type === 'fast'"
       >
         Fast donation
@@ -33,7 +33,7 @@ import Button from "./Button.astro";
         type="button"
         @click="type = 'enkelt'"
         :class="type === 'enkelt' ? 'border-2 border-secondary' : 'border-2 border-transparent'"
-        class="bg-accent py-3 transition"
+        class="bg-accent py-3 transition cursor-pointer"
         :aria-pressed="type === 'enkelt'"
       >
         Enkelt donation
@@ -54,7 +54,7 @@ import Button from "./Button.astro";
         type="button"
         @click="frequency = 'aarligt'"
         :class="frequency === 'aarligt' ? 'border-2 border-secondary' : 'border-2 border-transparent'"
-        class="bg-accent py-3 transition"
+        class="bg-accent py-3 transition cursor-pointer"
       >
         Støt årligt
       </button>
@@ -63,7 +63,7 @@ import Button from "./Button.astro";
         type="button"
         @click="frequency = 'maanedligt'"
         :class="frequency === 'maanedligt' ? 'border-2 border-secondary' : 'border-2 border-transparent'"
-        class="bg-accent py-3 transition"
+        class="bg-accent py-3 transition cursor-pointer"
       >
         Støt månedligt
       </button>
@@ -83,7 +83,7 @@ import Button from "./Button.astro";
         type="button"
         @click="amountPreset = '200'"
         :class="amountPreset === '200' ? 'border-2 border-secondary' : 'border-2 border-transparent'"
-        class="bg-accent py-3 transition"
+        class="bg-accent py-3 transition cursor-pointer"
       >
         200,- kr.
       </button>
@@ -92,7 +92,7 @@ import Button from "./Button.astro";
         type="button"
         @click="amountPreset = 'andet'"
         :class="amountPreset === 'andet' ? 'border-2 border-secondary' : 'border-2 border-transparent'"
-        class="bg-accent py-3 transition"
+        class="bg-accent py-3 transition cursor-pointer"
       >
         Andet
       </button>
@@ -134,7 +134,7 @@ import Button from "./Button.astro";
         type="button"
         @click="payment = 'mobilepay'"
         :class="payment === 'mobilepay' ? 'border-2 border-secondary' : 'border-2 border-transparent'"
-        class="bg-accent py-3 transition"
+        class="bg-accent py-3 transition cursor-pointer"
       >
         MobilePay
       </button>
@@ -143,7 +143,7 @@ import Button from "./Button.astro";
         type="button"
         @click="payment = 'kort'"
         :class="payment === 'kort' ? 'border-2 border-secondary' : 'border-2 border-transparent'"
-        class="bg-accent py-3 transition"
+        class="bg-accent py-3 transition cursor-pointer"
       >
         Betalingskort
       </button>
