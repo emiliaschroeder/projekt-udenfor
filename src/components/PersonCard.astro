@@ -1,11 +1,24 @@
 ---
-const { title, img, alt_tekst, number, job, mail } = Astro.props;
+const {
+  title,
+  img,
+  alt_tekst,
+  number,
+  job,
+  mail,
+  animate = false,
+  ...attrs
+} = Astro.props;
 
 import Text from "./Text.astro";
 import Link from "./Link.astro";
 ---
 
-<div class="mb-[var(--space-mob-xxl)]">
+<article
+  {...attrs}
+  data-animate={animate || undefined}
+  class={`mb-[var(--space-mob-xxl)] opacity-0 ${Astro.props.class ?? ""}`}
+>
   <!-- Card: billede start -->
   <img
     src={img}
@@ -27,4 +40,4 @@ import Link from "./Link.astro";
     <Link href={`tel:${number}`} variant="secondary">tlf: {number}</Link>
   </div>
   <!-- Card: kontakt slut -->
-</div>
+</article>
