@@ -161,6 +161,7 @@ import Button from "./Button.astro";
       <input
         type="text"
         name="firstname"
+        placeholder="..."
         required
         class="w-full border-2 border-secondary bg-primary px-3 py-2 outline-none"
       />
@@ -171,6 +172,7 @@ import Button from "./Button.astro";
       <input
         type="text"
         name="lastname"
+        placeholder="..."
         required
         class="w-full border-2 border-secondary bg-primary px-3 py-2 outline-none"
       />
@@ -183,16 +185,39 @@ import Button from "./Button.astro";
     <input
       type="email"
       name="email"
+      placeholder="..."
       required
       class="w-full border-2 border-secondary bg-primary px-3 py-2 outline-none"
     />
   </div>
-
-  <!-- CHECKBOX -->
-  <div class="mb-[var(--space-mob-xl)] space-y-[var(--space-mob-lg)]">
-    <label class="flex gap-3">
-      <input type="checkbox" required />
-      <Text style="p">Jeg accepterer vilkår og betingelser</Text>
+  <!-- Telefon -->
+  <div class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)]">
+    <Text style="p" class="mb-[var(--space-mob-sm)]">Telefon</Text>
+    <input
+      type="tel"
+      name="phone"
+      placeholder="..."
+      required
+      class="w-full border-2 border-secondary bg-primary px-3 py-2 outline-none"
+    />
+  </div>
+  <!-- Checkboxe -->
+  <div
+    class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)] space-y-[var(--space-mob-lg)]"
+  >
+    <label class="flex items-center gap-3 cursor-pointer">
+      <input type="checkbox" name="terms" class="opacity-100 text-secondary" />
+      <Text style="p"> Ja tak, jeg ønsker skattefradrag </Text>
+    </label>
+  </div>
+  <div
+    class="mb-[var(--space-mob-xl)] md:mb-[var(--space-desk-lg)] space-y-[var(--space-mob-lg)]"
+  >
+    <label class="flex items-center gap-3 cursor-pointer">
+      <input type="checkbox" name="terms" class="opacity-100 text-secondary" />
+      <Text style="p">
+        Jeg har læst og accepteret vilkår og betingelser for donation
+      </Text>
     </label>
   </div>
 
