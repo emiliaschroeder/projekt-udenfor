@@ -61,7 +61,10 @@ import Link from "../components/Link.astro";
     <section
       class="col-span-full grid grid-cols-6 md:grid-cols-12 pb-[var(--space-mob-xxl)] md:pb-[var(--space-desk-xl)]"
     >
-      <div class="col-start-2 col-span-4 w-64 md:col-start-2 md:col-span-6">
+      <div
+        data-animate
+        class="col-start-2 col-span-4 w-64 md:col-start-2 md:col-span-6 opacity-0"
+      >
         <div
           class="text-secondary pb-[var(--space-mob-sm)] md:pb-[var(--space-desk-xs)]"
         >
@@ -125,3 +128,21 @@ import Link from "../components/Link.astro";
     <!-- Slut indhold -->
   </main>
 </MainLayout>
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-in-up");
+          entry.target.classList.remove("opacity-0");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  document.querySelectorAll("[data-animate]").forEach((el) => {
+    observer.observe(el);
+  });
+</script>
