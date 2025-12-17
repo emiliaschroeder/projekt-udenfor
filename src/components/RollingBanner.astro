@@ -1,0 +1,80 @@
+---
+import Text from "./Text.astro";
+
+const facts = [
+  "Ca. 6.000 mennesker lever i hjemløshed i Danmark",
+  "Omkring 8 % af hjemløse lever som gadesovere",
+  "Projekt Udenfor arbejder direkte på gaden",
+  "Den Mobile Café serverer daglige måltider",
+  "Unge 18–29 år er overrepræsenteret i hjemløshed",
+];
+---
+
+<section
+  class="whitespace-nowrap
+    overflow-x-hidden
+    bg-[var(--color-accent)]
+    text-[var(--color-secondary)]
+    h-[24px] md:h-[64px]
+    flex items-center
+    group"
+>
+  <!-- Første loop -->
+  <div
+    class="inline-block
+      animate-infinite-scroll
+      whitespace-nowrap
+      group-hover:[animation-play-state:paused]
+      [&_span]:mx-8"
+  >
+    {
+      facts.map((fact) => (
+        <span class="inline-flex items-center gap-3">
+          <img
+            src="/img/logo.svg"
+            alt=""
+            aria-hidden="true"
+            class="w-8 md:w-8"
+          />
+          <Text style="pEm">{fact}</Text>
+          <img
+            src="/img/logo.svg"
+            alt=""
+            aria-hidden="true"
+            class="w-8 md:w-8"
+          />
+        </span>
+      ))
+    }
+  </div>
+
+  <!-- Andet loop (til uendelig scroll) -->
+  <div
+    class="inline-block
+      animate-infinite-scroll
+      whitespace-nowrap
+      group-hover:[animation-play-state:paused]
+      [&_span]:mx-8"
+    aria-hidden="true"
+  >
+    {
+      facts.map((fact) => (
+        <span class="inline-flex items-center gap-3">
+          <img
+            src="/img/logo.svg"
+            alt=""
+            aria-hidden="true"
+            class="w-8 md:w-8"
+          />
+          <Text style="pEm">{fact}</Text>
+          <img
+            src="/img/logo.svg"
+            alt=""
+            aria-hidden="true"
+            class="w-8 md:w-8"
+          />
+        </span>
+      ))
+    }
+  </div>
+</section>
