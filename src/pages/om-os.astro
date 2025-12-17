@@ -51,7 +51,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
       class="bg-secondary col-span-full grid grid-cols-6 md:grid-cols-12
          pt-20 pb-10 -mt-10
          md:-mt-40 md:pb-20
-         mb-[var(--space-mob-xxl)] md:mb-[var(--space-desk-xl)]"
+         mb-[var(--space-mob-xxl)] md:mb-[var(--space-desk-md)]"
     >
       <!-- Historie: tekstgruppe start -->
       <div
@@ -81,7 +81,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
 
         <!-- Historie: CTA start -->
         <div>
-          <Button href="/stoet" variant="onred">BLIV FRIVILLIG</Button>
+          <Button href="#frivillig" variant="onred">BLIV FRIVILLIG</Button>
         </div>
         <!-- Historie: CTA slut -->
       </div>
@@ -101,7 +101,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
         data-animate
         class="grid grid-cols-6 md:grid-cols-12
            pb-[var(--space-mob-md)]
-           md:pb-[var(--space-desk-xxl)]
+           md:pb-[var(--space-desk-md)]
            md:gap-[var(--space-desk-lg)] opacity-0"
       >
         <!-- Tekst 1 start -->
@@ -197,18 +197,19 @@ import ScrollToTop from "../components/ScrollToTop.astro";
     <section>
       <div
         class="grid grid-cols-6 md:grid-cols-12
-           
            md:mb-[var(--space-desk-xxl)]"
       >
         <!-- Frivillig: tekst start -->
         <div
           class="col-span-4 col-start-2
              md:col-span-5 md:col-start-2
-             pb-[var(--space-mob-xl)]"
+             pb-[var(--space-mob-xl)]
+             pb-[var(--space-mob-sm)]"
         >
           <div
             data-animate
             class="pt-[var(--space-mob-xl)] pb-[var(--space-mob-sm)] opacity-0"
+            id="frivillig"
           >
             <Heading style="h4" stylingclasses="text-secondary">
               Bliv frivillig
@@ -223,9 +224,11 @@ import ScrollToTop from "../components/ScrollToTop.astro";
               i et meningsfyldt arbejde og gøre en forskel for nogle af de dårligst
               stillede mennesker i København.
               <br />
-              <Link href="#">Du kan læse mere om Den Mobile Café her.</Link>
+              <Link variant="secondary" href="/#denmobilecafe"
+                >Du kan læse mere om Den Mobile Café her.</Link
+              >
               <br /><br />
-              Vagterne ligger fra kl. 17 – 21 i hverdagene og starter og slutter på
+              Vagterne ligger fra kl. 17 - 21 i hverdagene og starter og slutter på
               vores kontor i Ravnsborggade i København N.
               <br /><br />
               Din baggrund er ikke afgørende. Vi har en bred vifte af fagligheder
@@ -240,7 +243,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
           </div>
 
           <div data-animate class="mt-[var(--space-mob-sm)] opacity-0">
-            <Button href="/stoet" variant="onsand">KONTAKT</Button>
+            <Button href="/kontakt" variant="onsand">KONTAKT</Button>
           </div>
         </div>
         <!-- Frivillig: tekst slut -->
@@ -333,7 +336,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
       <!-- Om os: sektion "Ledelse og administration" slut -->
 
       <!-- Om os: sektion "Gade" start -->
-      <PersonerSektionCard title="Gade" data-animate>
+      <PersonerSektionCard title="Gadeplanen" data-animate id="gadeplanen">
         <PersonCard
           animate
           title="Bo Heide-Joechimsen"
