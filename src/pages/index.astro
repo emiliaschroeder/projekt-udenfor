@@ -270,12 +270,24 @@ import ScrollToTop from "../components/ScrollToTop.astro";
     if (!element) return;
 
     const isDesktop = window.matchMedia("(min-width: 768px)").matches;
-    const distance = isDesktop ? 300 : 60;
+    const distance = isDesktop ? 80 : 25;
 
-    scroll(animate(element, { y: [0, distance] }), {
-      target: element,
-      offset: ["start end", "end start"],
-    });
+    scroll(
+      animate(
+        element,
+        {
+          y: [0, distance],
+          opacity: [1, 0.97],
+        },
+        {
+          easing: "ease-out",
+        },
+      ),
+      {
+        target: element,
+        offset: ["start end", "end start"],
+      },
+    );
   });
 </script>
 
