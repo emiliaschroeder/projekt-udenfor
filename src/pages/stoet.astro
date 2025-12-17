@@ -5,6 +5,7 @@ import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 import Form from "../components/Form.astro";
 import TextBox from "../components/TextBox.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 ---
 
 <MainLayout title="Støt">
@@ -312,6 +313,7 @@ import TextBox from "../components/TextBox.astro";
       </section>
     </section>
     <!-- Slut Tekst -->
+    <ScrollToTop offset={200} />
   </main>
 </MainLayout>
 
@@ -353,6 +355,7 @@ import TextBox from "../components/TextBox.astro";
     }
   });
 </script>
+
 <script is:inline>
   const observer = new IntersectionObserver(
     (entries) => {
