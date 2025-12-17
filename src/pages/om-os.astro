@@ -90,17 +90,19 @@ import PopUp from "../components/PopUp.astro";
     <!--  HISTORIE + BILLEDER START -->
     <section>
       <div
+        data-animate
         class="grid grid-cols-6 md:grid-cols-12
            pb-[var(--space-mob-md)]
            md:pb-[var(--space-desk-xxl)]
-           md:gap-[var(--space-desk-lg)]"
+           md:gap-[var(--space-desk-lg)] opacity-0"
       >
         <!-- Tekst 1 start -->
         <div
+          data-animate
           class="col-start-2 col-span-4
              mb-[var(--space-mob-xl)]
              md:col-start-2 md:col-span-5
-            md:mb-0"
+            md:mb-0 opacity-0"
         >
           <Text style="p">
             Projekt Udenfor sætter ind dér, hvor det offentlige sociale
@@ -112,13 +114,14 @@ import PopUp from "../components/PopUp.astro";
 
         <!-- Billeder start -->
         <div
+          data-animate
           class="col-start-2 col-span-4
              flex gap-[var(--space-mob-md)]
              mb-[var(--space-mob-xl)]
              md:col-start-2 md:col-span-3
              md:flex-col md:gap-[var(--space-desk-xxl)]
               md:row-span-2
-             md:mb-0"
+             md:mb-0 opacity-0"
         >
           <img
             src="/img/prebenbranct.png"
@@ -135,14 +138,18 @@ import PopUp from "../components/PopUp.astro";
 
         <!-- Tekst 3 start -->
         <div
+          data-animate
           class="col-start-2 col-span-4
              md:col-start-5 md:col-span-5
-             md:row-start-2"
+             md:row-start-2 opacity-0"
         >
-          <div class="text-secondary pb-[var(--space-mob-sm)]">
+          <div
+            data-animate
+            class="text-secondary pb-[var(--space-mob-sm)] opacity-0"
+          >
             <Heading style="h4">Vores grundideologi</Heading>
           </div>
-          <Text style="p">
+          <Text style="p" data-animate class="opacity-0">
             Dr. med. Preben Brandt, som forinden havde været ansat som
             Socialoverlæge på Københavns Kommunes store, gamle
             hjemløseinstitution Sundholm, havde i flere år udført opsøgende
@@ -191,7 +198,10 @@ import PopUp from "../components/PopUp.astro";
              md:col-span-5 md:col-start-2
              pb-[var(--space-mob-xl)]"
         >
-          <div class="pt-[var(--space-mob-xl)] pb-[var(--space-mob-sm)]">
+          <div
+            data-animate
+            class="pt-[var(--space-mob-xl)] pb-[var(--space-mob-sm)] opacity-0"
+          >
             <Heading style="h4" stylingclasses="text-secondary">
               Bliv frivillig
             </Heading>
@@ -221,7 +231,7 @@ import PopUp from "../components/PopUp.astro";
             </Text>
           </div>
 
-          <div class="mt-[var(--space-mob-sm)]">
+          <div data-animate class="mt-[var(--space-mob-sm)] opacity-0">
             <Button href="/stoet" variant="onsand">KONTAKT</Button>
           </div>
         </div>
@@ -229,11 +239,12 @@ import PopUp from "../components/PopUp.astro";
 
         <!-- Frivillig: billeder start -->
         <div
+          data-animate
           class="col-span-4 col-start-2
              mb-[var(--space-mob-xl)]
              md:col-span-3 md:col-start-9
              md:row-span-2 md:row-start-1
-             md:mb-0"
+             md:mb-0 opacity-0"
         >
           <img
             src="/img/christian.png"
@@ -256,7 +267,8 @@ import PopUp from "../components/PopUp.astro";
     <section>
       <!-- Om os: banner start -->
       <div
-        class="mb-[var(--space-mob-xxl)] ol-span-full md:col-span-12 md:mb-[var(--space-desk-xl)]"
+        data-animate
+        class="mb-[var(--space-mob-xxl)] ol-span-full md:col-span-12 md:mb-[var(--space-desk-xl)] påacity-0"
       >
         <Banner>
           Godt en tredjedel af alle borgere i hjemløshed er unge mellem 18 og 29
@@ -264,8 +276,9 @@ import PopUp from "../components/PopUp.astro";
         >
       </div>
       <!-- Om os: banner slut -->
-
-      <!-- Om os: sideoverskrift "Medarbejdere" start -->
+    </section>
+    <!-- Om os: sideoverskrift "Medarbejdere" start -->
+    <section>
       <div class="mb-[var(--space-mob-md)] grid grid-cols-6 md:grid-cols-12">
         <div class="col-start-2 col-span-4 md:col-start-2 md:col-span-4">
           <Heading style="h3" stylingclasses="text-secondary "
@@ -276,31 +289,34 @@ import PopUp from "../components/PopUp.astro";
       <!-- Om os: sideoverskrift "Medarbejdere" slut -->
 
       <!-- Om os: sektion "Ledelse og administration" start -->
+
       <PersonerSektionCard title="Ledelse og administration">
         <!-- PersonCard start -->
+
         <PersonCard
+          animate
           title="Bo Heide-Joechimsen"
           img="/img/bo.png"
           alt_tekst="Billede af Bo"
           job="Inspektør"
           mail="bj@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
 
         <!-- PersonCard start -->
+
         <PersonCard
+          animate
           title="Anette M. Tullberg"
           img="/img/anette.png"
           alt_tekst="Billede af anette"
           job="Administrations- og personaleansvarlig"
           mail="amt@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
       </PersonerSektionCard>
       <!-- Om os: sektion "Ledelse og administration" slut -->
@@ -308,80 +324,85 @@ import PopUp from "../components/PopUp.astro";
       <!-- Om os: sektion "Gade" start -->
       <PersonerSektionCard title="Gade">
         <PersonCard
+          animate
           title="Bo Heide-Joechimsen"
           img="/img/bo.png"
           alt_tekst="Billede af Bo"
           job="Inspektør"
           mail="bj@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
 
         <!-- PersonCard start -->
+
         <PersonCard
+          animate
           title="Anette M. Tullberg"
           img="/img/anette.png"
           alt_tekst="Billede af Anette"
           job="Administrations- og personaleansvarlig"
           mail="amt@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
 
         <!-- PersonCard start -->
+
         <PersonCard
+          animate
           title="Bo Heide-Joechimsen"
           img="/img/bo.png"
           alt_tekst="Billede af bo"
           job="Inspektør"
           mail="bj@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
 
         <!-- PersonCard start -->
+
         <PersonCard
+          animate
           title="Anette M. Tullberg"
           img="/img/anette.png"
           alt_tekst="Billede af anette"
           job="Administrations- og personaleansvarlig"
           mail="amt@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
 
         <!-- PersonCard start -->
+
         <PersonCard
+          animate
           title="Bo Heide-Joechimsen"
           img="/img/bo.png"
           alt_tekst="Billede af bo"
           job="Inspektør"
           mail="bj@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
 
         <!-- PersonCard start -->
+
         <PersonCard
+          animate
           title="Anette M. Tullberg"
           img="/img/anette.png"
           alt_tekst="Billede af anette"
           job="Administrations- og personaleansvarlig"
           mail="amt@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
       </PersonerSektionCard>
       <!-- Om os: sektion "Gade" slut -->
@@ -389,55 +410,59 @@ import PopUp from "../components/PopUp.astro";
       <!-- Om os: sektion "Viden og formidling" start -->
       <PersonerSektionCard title="Viden og formidling">
         <!-- PersonCard start -->
+
         <PersonCard
+          animate
           title="Bo Heide-Joechimsen"
           img="/img/bo.png"
           alt_tekst="Billede af bo"
           job="Inspektør"
           mail="bj@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
 
         <!-- PersonCard start -->
+
         <PersonCard
+          animate
           title="Anette M. Tullberg"
           img="/img/anette.png"
           alt_tekst="Billede af anette"
           job="Administrations- og personaleansvarlig"
           mail="amt@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
 
         <!-- PersonCard start -->
+
         <PersonCard
+          animate
           title="Bo Heide-Joechimsen"
           img="/img/bo.png"
           alt_tekst="Billede af bo"
           job="Inspektør"
           mail="bj@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
 
         <!-- PersonCard start -->
+
         <PersonCard
+          animate
           title="Anette M. Tullberg"
           img="/img/anette.png"
           alt_tekst="Billede af anette"
           job="Administrations- og personaleansvarlig"
           mail="amt@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
       </PersonerSektionCard>
       <!-- Om os: sektion "Viden og formidling" slut -->
@@ -445,20 +470,40 @@ import PopUp from "../components/PopUp.astro";
       <!-- Om os: sektion "Den mobile cafe" start -->
       <PersonerSektionCard title="Den mobile cafe">
         <!-- PersonCard start -->
+
         <PersonCard
+          animate
           title="Bo Heide-Joechimsen"
           img="/img/bo.png"
           alt_tekst="Billede af bo"
           job="Inspektør"
           mail="bj@udenfor.dk"
           number="33 42 76 00"
-          <
-          main
         />
+
         <!-- PersonCard slut -->
       </PersonerSektionCard>
       <!-- Om os: sektion "Den mobile cafe" slut -->
     </section>
     <PopUp />
   </main>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in-up");
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+
+    document.querySelectorAll("[data-animate]").forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
 </MainLayout>
