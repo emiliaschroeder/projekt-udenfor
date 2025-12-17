@@ -1,0 +1,75 @@
+---
+const { offset = 200 } = Astro.props;
+---
+
+<div
+  id="scrollToTop"
+  class="fixed left-0 bottom-[20px] z-[999]
+         pl-[16px] md:pl-[32px]
+         opacity-0 pointer-events-none translate-y-1
+         transition-all duration-300 ease-out"
+>
+  <button
+    type="button"
+    aria-label="Scroll til toppen"
+    class="group inline-flex items-center justify-center"
+  >
+    <img
+      src="/img/scroll_back.svg"
+      alt=""
+      aria-hidden="true"
+      class="w-9 h-9 md:w-14 md:h-14"
+    />
+  </button>
+</div>
+
+<script define:vars={{ offset }}>
+  const el = document.getElementById("scrollToTop");
+  const btn = el?.querySelector("button");
+
+  if (!el || !btn) {
+    console.warn("[ScrollToTop] element/button not found");
+  } else {
+    let lastY = window.scrollY;
+    let ticking = false;
+
+    const show = () => {
+      el.classList.remove("opacity-0", "pointer-events-none", "translate-y-1");
+      el.classList.add("opacity-100", "pointer-events-auto", "translate-y-0");
+    };
+
+    const hide = () => {
+      el.classList.add("opacity-0", "pointer-events-none", "translate-y-1");
+      el.classList.remove(
+        "opacity-100",
+        "pointer-events-auto",
+        "translate-y-0",
+      );
+    };
+
+    const update = () => {
+      const y = window.scrollY;
+      const goingUp = y < lastY;
+      const farEnough = y > offset;
+
+      if (goingUp && farEnough) show();
+      else hide();
+
+      lastY = y;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+</script>
