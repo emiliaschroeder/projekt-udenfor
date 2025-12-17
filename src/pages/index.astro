@@ -219,7 +219,9 @@ import PopUp from "../components/PopUp.astro";
         <!-- Top: 8% + tekst -->
         <div class="grid grid-cols-6 md:grid-cols-12">
           <div class="col-start-2 col-span-1 md:col-start-3 md:col-span-2">
-            <Heading style="h1" class="leading-none tracking-0">8%</Heading>
+            <Heading style="h1" class="leading-none tracking-0">
+              <span id="count-up" data-target="8">0</span>%
+            </Heading>
           </div>
 
           <div
@@ -253,3 +255,46 @@ import PopUp from "../components/PopUp.astro";
     <PopUp />
   </main>
 </MainLayout>
+
+<script>
+  // Finder elementet der indeholder tallet, vi vil animere
+  const counter = document.getElementById("count-up");
+
+  if (counter) {
+    // Henter det tal vi vil tælle op til fra data-attributten
+    // data-target="8" target = 8
+    const target = parseInt(counter.dataset.target, 10);
+    // Startværdi for tælleren
+    let current = 0;
+    // Animation duration(1800ms):
+    const duration = 1800;
+    // Udregner hvor ofte tallet skal opdateres
+    // Jo højere target, jo kortere interval
+    const stepTime = Math.max(Math.floor(duration / target), 50);
+
+    // IntersectionObserver bruges til at starte animationen
+    // først når tallet kommer ind i viewporten
+    const observer = new IntersectionObserver(
+      ([entry], obs) => {
+        // Tjekker om elementet er synligt på skærmen
+        if (entry.isIntersecting) {
+          // Starter et interval, der tæller tallet op
+          const timer = setInterval(() => {
+            current++; // Øger tallet med 1
+            counter.textContent = String(current);
+            // Stopper animationen når vi når target
+            if (current >= target) {
+              clearInterval(timer);
+            }
+          }, stepTime);
+          // kører kun én gang:
+          obs.disconnect();
+        }
+      },
+      // Animationen starter når 50% af elementet er synligt
+      { threshold: 0.5 },
+    );
+
+    observer.observe(counter);
+  }
+</script>
