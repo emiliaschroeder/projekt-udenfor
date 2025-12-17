@@ -280,7 +280,10 @@ import PopUp from "../components/PopUp.astro";
     <!-- Om os: sideoverskrift "Medarbejdere" start -->
     <section>
       <div class="mb-[var(--space-mob-md)] grid grid-cols-6 md:grid-cols-12">
-        <div class="col-start-2 col-span-4 md:col-start-2 md:col-span-4">
+        <div
+          data-animate
+          class="col-start-2 col-span-4 md:col-start-2 md:col-span-4 opacity-0"
+        >
           <Heading style="h3" stylingclasses="text-secondary "
             >Medarbejdere</Heading
           >
@@ -290,7 +293,7 @@ import PopUp from "../components/PopUp.astro";
 
       <!-- Om os: sektion "Ledelse og administration" start -->
 
-      <PersonerSektionCard title="Ledelse og administration">
+      <PersonerSektionCard title="Ledelse og administration" data-animate>
         <!-- PersonCard start -->
 
         <PersonCard
@@ -322,7 +325,7 @@ import PopUp from "../components/PopUp.astro";
       <!-- Om os: sektion "Ledelse og administration" slut -->
 
       <!-- Om os: sektion "Gade" start -->
-      <PersonerSektionCard title="Gade">
+      <PersonerSektionCard title="Gade" data-animate>
         <PersonCard
           animate
           title="Bo Heide-Joechimsen"
@@ -408,7 +411,7 @@ import PopUp from "../components/PopUp.astro";
       <!-- Om os: sektion "Gade" slut -->
 
       <!-- Om os: sektion "Viden og formidling" start -->
-      <PersonerSektionCard title="Viden og formidling">
+      <PersonerSektionCard title="Viden og formidling" data-animate>
         <!-- PersonCard start -->
 
         <PersonCard
@@ -468,7 +471,7 @@ import PopUp from "../components/PopUp.astro";
       <!-- Om os: sektion "Viden og formidling" slut -->
 
       <!-- Om os: sektion "Den mobile cafe" start -->
-      <PersonerSektionCard title="Den mobile cafe">
+      <PersonerSektionCard title="Den mobile cafe" data-animate>
         <!-- PersonCard start -->
 
         <PersonCard
@@ -488,22 +491,24 @@ import PopUp from "../components/PopUp.astro";
     <PopUp />
   </main>
 
-  <script>
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in-up");
-            entry.target.classList.remove("opacity-0");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.3 },
-    );
-
-    document.querySelectorAll("[data-animate]").forEach((el) => {
-      observer.observe(el);
-    });
-  </script>
+  <PopUp />
 </MainLayout>
+
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-in-up");
+          entry.target.classList.remove("opacity-0");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  document.querySelectorAll("[data-animate]").forEach((el) => {
+    observer.observe(el);
+  });
+</script>
