@@ -46,12 +46,16 @@ import TextBox from "../components/TextBox.astro";
         >
           <!-- Venstre kolonne -->
           <section
-            class="col-start-2 col-span-4 md:col-start-2 md:col-span-5 text-primary"
+            data-animate
+            class="col-start-2 col-span-4 md:col-start-2 md:col-span-5 text-primary opacity-0"
           >
             <Heading style="h4"
               >Hjælp os med at <br />forbedre vilkårene</Heading
             >
-            <div class="mt-[var(--space-mob-sm)] md:mt-[var(--space-desk-sm)]">
+            <div
+              data-animate
+              class="mt-[var(--space-mob-sm)] md:mt-[var(--space-desk-sm)] opacity-0"
+            >
               <Text
                 style="p"
                 stylingclasses="text-white"
@@ -85,7 +89,10 @@ import TextBox from "../components/TextBox.astro";
               Støt og modtag 2 gratis digtsamlinger
             </Heading>
 
-            <div class="mt-[var(--space-mob-sm)] md:mt-[var(--space-desk-sm)]">
+            <div
+              data-animate
+              class="mt-[var(--space-mob-sm)] md:mt-[var(--space-desk-sm)] opacity-0"
+            >
               <Text style="p" stylingclasses="text-white">
                 Du kan hjælpe os med at forbedre forholdene for hjemløse
                 borgere, som lever på gaden. Lige nu sender vi dig to
@@ -98,7 +105,8 @@ import TextBox from "../components/TextBox.astro";
 
           <!-- Højre kolonne (form) -->
           <aside
-            class="col-span-full md:col-start-7 md:col-span-6 px-5 md:px-0"
+            data-animate
+            class="col-span-full md:col-start-7 md:col-span-6 px-5 md:px-0 opacity-0"
           >
             <div
               class="bg-primary px-[var(--space-mob-md)] py-[28px] md:p-[var(--space-desk-lg)] md:mt-[120px]"
@@ -108,7 +116,8 @@ import TextBox from "../components/TextBox.astro";
 
             <!-- Persondata -->
             <div
-              class="gap-[var(--space-mob-sm)] md:gap-[var(--space-desk-sm)] mt-[var(--space-mob-md)] md:mt-[var(--space-desk-md)] text-white"
+              data-animate
+              class="gap-[var(--space-mob-sm)] md:gap-[var(--space-desk-sm)] mt-[var(--space-mob-md)] md:mt-[var(--space-desk-md)] text-white opacity-0"
             >
               <Text style="p">Persondata</Text>
 
@@ -221,9 +230,12 @@ import TextBox from "../components/TextBox.astro";
               </div>
 
               <!-- BILLEDE (samme midterkolonner på mobil) -->
-              <figure class="md:col-span-6 md:flex md:justify-end">
+              <figure
+                data-animate
+                class="md:col-span-6 md:flex md:justify-end opacity-0"
+              >
                 <img
-                  src="/public/img/måltid.png"
+                  src="/public/img/maaltid.png"
                   alt="Et måltid bliver rakt frem"
                   class="w-full h-auto md:w-[510px] md:h-[415px]"
                 />
@@ -239,13 +251,16 @@ import TextBox from "../components/TextBox.astro";
       <section
         class="md:grid md:grid-cols-12 mt-[var(--space-mob-sm)] md:mt-[var(--space-desk-sm)]"
       >
-        <div class="md:col-start-1">
+        <div data-animate class="md:col-start-1 opacity-0">
           <TextBox
             sectionTitle="Andre donationer"
             body="Ønsker du at donere naturalier til Projekt Udenfor, så kontakt os på info@udenfor.dk eller 33427600. Hvis vi af den ene eller anden årsag ikke er den rette modtager af donationen, kan vi måske guide dig til et andet sted, der kunne drage nytte af dit overskud."
           />
         </div>
-        <div class="md:col-start-1 md:col-span-full md:grid md:grid-cols-5">
+        <div
+          data-animate
+          class="md:col-start-1 md:col-span-full md:grid md:grid-cols-5 opacity-0"
+        >
           <div class="md:col-start-1 md:col-span-2">
             <img
               src="/img/gave.png"
@@ -266,7 +281,10 @@ import TextBox from "../components/TextBox.astro";
           </div>
         </div>
 
-        <div class="md:col-start-1 md:col-span-full md:grid md:grid-cols-5">
+        <div
+          data-animate
+          class="md:col-start-1 md:col-span-full md:grid md:grid-cols-5 opacity-0"
+        >
           <div class="md:col-start-1 md:col-span-2">
             <img
               src="/img/frivillig.png"
@@ -333,5 +351,23 @@ import TextBox from "../components/TextBox.astro";
         offset: ["start end", "end start"],
       });
     }
+  });
+</script>
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-in-up");
+          entry.target.classList.remove("opacity-0");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  document.querySelectorAll("[data-animate]").forEach((el) => {
+    observer.observe(el);
   });
 </script>

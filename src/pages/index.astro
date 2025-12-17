@@ -96,11 +96,12 @@ import PopUp from "../components/PopUp.astro";
     >
       <div>
         <div
-          class="text-secondary leading-tight pb-[var(--space-mob-sm)] md:pb-[var(--space-desk-xs)]"
+          data-animate
+          class="text-secondary leading-tight pb-[var(--space-mob-sm)] md:pb-[var(--space-desk-xs)] opacity-0"
         >
           <Heading style="h3"> Fortællinger fra gaden </Heading>
         </div>
-        <div class="w-[279px] md:w-[691px]">
+        <div data-animate class="w-[279px] md:w-[691px] opacity-0">
           <Text>
             Gadesovere er mennesker i hjemløshed, der lever og overnatter på
             gaden. Selv i årets koldeste måneder sover de udenfor eller søger læ
@@ -127,7 +128,7 @@ import PopUp from "../components/PopUp.astro";
     </section>
     <!-- Slut ScrollBar sektion -->
     <!-- Start Banner -->
-    <div class="col-span-full md:col-span-12">
+    <div data-animate class="col-span-full md:col-span-12 opacity-0">
       <Banner
         >Godt en tredjedel af alle borgere i hjemløshed er unge mellem 18 og 29
         år.</Banner
@@ -146,7 +147,7 @@ import PopUp from "../components/PopUp.astro";
           />
         </div>
         <div class="md:col-start-1 md:col-span-full md:grid md:grid-cols-5">
-          <div class="md:col-start-1 md:col-span-2">
+          <div data-animate class="md:col-start-1 md:col-span-2 opacity-0">
             <img
               src="/img/gadevogn.png"
               alt=""
@@ -170,7 +171,7 @@ import PopUp from "../components/PopUp.astro";
         </div>
 
         <div class="md:col-start-1 md:col-span-full md:grid md:grid-cols-5">
-          <div class="md:col-start-1 md:col-span-2">
+          <div data-animate class="md:col-start-1 md:col-span-2 opacity-0">
             <img
               src="/img/denmobilecafe.png"
               alt=""
@@ -210,11 +211,13 @@ import PopUp from "../components/PopUp.astro";
 
     <!-- Start infografik -->
     <section
-      class="col-span-full bg-secondary text-white mb-[var(--space-mob-xxl)]"
+      data-animate
+      class="col-span-full bg-secondary text-white mb-[var(--space-mob-xxl)] opacity-0"
     >
       <div
+        data-animate
         class="col-start-2 col-span-4 md:col-start-3 md:col-span-10
-           py-[var(--space-mob-xxl)] md:py-[var(--space-desk-xl)]"
+           py-[var(--space-mob-xxl)] md:py-[var(--space-desk-xl)] opacity-0"
       >
         <!-- Top: 8% + tekst -->
         <div class="grid grid-cols-6 md:grid-cols-12">
@@ -297,4 +300,22 @@ import PopUp from "../components/PopUp.astro";
 
     observer.observe(counter);
   }
+</script>
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-in-up");
+          entry.target.classList.remove("opacity-0");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  document.querySelectorAll("[data-animate]").forEach((el) => {
+    observer.observe(el);
+  });
 </script>

@@ -3,12 +3,21 @@ import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 import Button from "./Button.astro";
 
-const { sectionTitle, sectionSubtitle, lead, body, buttonText, buttonHref } =
-  Astro.props;
+const {
+  sectionTitle,
+  sectionSubtitle,
+  lead,
+  body,
+  buttonText,
+  buttonHref,
+  ...attrs
+} = Astro.props;
 ---
 
 <div
-  class="w-72 md:w-[590px] pb-[var(--space-mob-xxl)] md:pb-[var(--space-desk-xl)]"
+  {...attrs}
+  data-animate
+  class={`w-72 md:w-[590px] pb-[var(--space-mob-xxl)] md:pb-[var(--space-desk-xl)] opacity-0 ${Astro.props.class ?? ""}`}
 >
   <!-- Overskrift "h3" -->
   <div class="text-secondary">
