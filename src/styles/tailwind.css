@@ -56,6 +56,18 @@
   --space-mob-lg: 20px;
   --space-mob-xl: 24px;
   --space-mob-xxl: 56px;
+
+  /* Infinite scroll animation */
+  --animate-infinite-scroll: infinite-scroll 40s linear infinite;
+
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 @layer base {
