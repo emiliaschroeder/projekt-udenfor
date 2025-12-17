@@ -3,7 +3,8 @@ import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 import Button from "./Button.astro";
 
-const { sectionTitle, sectionSubtitle, lead, body, buttonText } = Astro.props;
+const { sectionTitle, sectionSubtitle, lead, body, buttonText, buttonHref } =
+  Astro.props;
 ---
 
 <div
@@ -25,5 +26,11 @@ const { sectionTitle, sectionSubtitle, lead, body, buttonText } = Astro.props;
   <div class="pb-[var(--space-mob-sm)] md:pb-[var(--space-desk-xs)]">
     <Text style="p">{body}</Text>
   </div>
-  {buttonText && <Button variant="onsand">{buttonText}</Button>}
+  {
+    buttonText && (
+      <Button variant="onsand" href={buttonHref}>
+        {buttonText}
+      </Button>
+    )
+  }
 </div>
