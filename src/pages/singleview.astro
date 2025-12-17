@@ -224,8 +224,12 @@ import ScrollToTop from "../components/ScrollToTop.astro";
       data-animate
       class="col-span-full md:pb-[var(--space-desk-lg)] opacity-0"
     >
-      <Banner> 50 % af gadesoverne har været hjemløse i mere end 2 år. </Banner>
+      <Banner>
+        <span id="count-up" data-target="50">0</span>% af gadesoverne har været
+        hjemløse i mere end 2 år.
+      </Banner>
     </div>
+
     <!-- Slut banner -->
     <PopUp />
     <ScrollToTop offset={200} />
@@ -254,6 +258,47 @@ import ScrollToTop from "../components/ScrollToTop.astro";
       });
     }
   });
+
+  // Finder elementet der indeholder tallet, vi vil animere
+  const counter = document.getElementById("count-up");
+
+  if (counter) {
+    // Henter det tal vi vil tælle op til fra data-attributten
+    // data-target="50" target = 50
+    const target = parseInt(counter.dataset.target, 10);
+    // Startværdi for tælleren
+    let current = 0;
+    // Animation duration(1000ms):
+    const duration = 1000;
+    // Udregner hvor ofte tallet skal opdateres
+    // Jo højere target, jo kortere interval
+    const stepTime = Math.max(Math.floor(duration / target), 30);
+
+    // IntersectionObserver bruges til at starte animationen
+    // først når tallet kommer ind i viewporten
+    const observer = new IntersectionObserver(
+      ([entry], obs) => {
+        // Tjekker om elementet er synligt på skærmen
+        if (entry.isIntersecting) {
+          // Starter et interval, der tæller tallet op
+          const timer = setInterval(() => {
+            current++; // Øger tallet med 1
+            counter.textContent = String(current);
+            // Stopper animationen når vi når target
+            if (current >= target) {
+              clearInterval(timer);
+            }
+          }, stepTime);
+          // kører kun én gang:
+          obs.disconnect();
+        }
+      },
+      // Animationen starter når 50% af elementet er synligt
+      { threshold: 0.5 },
+    );
+
+    observer.observe(counter);
+  }
 </script>
 
 <script is:inline>
