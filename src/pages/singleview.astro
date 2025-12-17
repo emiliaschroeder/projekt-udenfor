@@ -237,27 +237,32 @@ import ScrollToTop from "../components/ScrollToTop.astro";
   </main>
 </MainLayout>
 
-<script>
-  /* Import af Motion One bibliotek */
+<script type="module">
   import { animate, scroll } from "motion";
 
-  animate("body", { opacity: [0, 1] }, { duration: 1.3 });
-
-  window.addEventListener("load", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const element = document.querySelector(".parallaxelement");
     if (!element) return;
 
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      scroll(animate(element, { y: [0, 300] }), {
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    const distance = isDesktop ? 80 : 25;
+
+    scroll(
+      animate(
+        element,
+        {
+          y: [0, distance],
+          opacity: [1, 0.97],
+        },
+        {
+          easing: "ease-out",
+        },
+      ),
+      {
         target: element,
         offset: ["start end", "end start"],
-      });
-    } else {
-      scroll(animate(element, { y: [0, 60] }), {
-        target: element,
-        offset: ["start end", "end start"],
-      });
-    }
+      },
+    );
   });
 
   // Finder elementet der indeholder tallet, vi vil animere
