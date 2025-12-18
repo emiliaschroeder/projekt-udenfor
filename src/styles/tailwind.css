@@ -82,19 +82,6 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  body {
-    opacity: 0;
-    animation: pageFade 0.5s ease-out forwards;
-  }
-
-  @keyframes pageFade {
-    to {
-      opacity: 1;
-    }
-  }
-}
-
 @layer components {
 }
 
