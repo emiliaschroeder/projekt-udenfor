@@ -509,9 +509,9 @@ import ScrollToTop from "../components/ScrollToTop.astro";
   /* Import af Motion One bibliotek */
   import { animate, scroll } from "motion";
 
-  animate("body", { opacity: [0, 1] }, { duration: 1.3 });
+  animate("body", { opacity: [0.5, 1] }, { duration: 0.5 });
 
-  window.addEventListener("load", () => {
+  window.addEventListener("DOMContentLoaded", () => {
     const element = document.querySelector(".parallaxelement");
     if (!element) return;
 
