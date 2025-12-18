@@ -17,12 +17,16 @@ import ScrollToTop from "../components/ScrollToTop.astro";
     <div
       class="bg-secondary col-span-full text-primary py-3 leading-none flex justify-center md:justify-start md:pl-10 z-10 md:-mt-5 md:pb-0"
     >
-      <Heading style="h1">Projekt</Heading>
+      <div class="heroinviewleft">
+        <Heading style="h1">Projekt</Heading>
+      </div>
     </div>
     <div
       class="text-secondary col-span-full leading-none py-3 flex justify-center md:justify-end md:pr-15 md:-mt-3"
     >
-      <Heading style="h1">Udenfor</Heading>
+      <div class="heroinviewright">
+        <Heading style="h1">Udenfor</Heading>
+      </div>
     </div>
 
     <div
@@ -303,6 +307,21 @@ import ScrollToTop from "../components/ScrollToTop.astro";
 
     observer.observe(counter);
   }
+</script>
+
+<script>
+  /* Import af Motion One bibliotek */
+  import { animate, inView } from "motion";
+  /* inView animation */
+  inView(".heroinviewleft", () => {
+    animate(".heroinviewleft", { x: [-500, 0] }, { duration: 0.6 });
+  });
+
+  inView(".heroinviewright", () => {
+    animate(".heroinviewright", { x: [500, 0] }, { duration: 0.6 });
+  });
+
+  animate("body", { opacity: [0.5, 1] }, { duration: 0.5 });
 </script>
 
 <script is:inline>
