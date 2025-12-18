@@ -69,12 +69,12 @@
     }
   }
 }
-@layer base {
+/* @layer base {
   html,
   body {
     overflow-x: hidden;
   }
-}
+} */
 
 @layer base {
   [x-cloak] {
