@@ -316,8 +316,6 @@ import ScrollToTop from "../components/ScrollToTop.astro";
   /* Import af Motion One bibliotek */
   import { animate, stagger, inView } from "motion";
 
-  animate("body", { opacity: [0.5, 1] }, { duration: 0.5 });
-
   /* Stagger animation */
   inView("#stagger", () => {
     animate(
