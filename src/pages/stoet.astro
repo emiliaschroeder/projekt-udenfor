@@ -314,7 +314,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
 
 <script>
   /* Import af Motion One bibliotek */
-  import { animate, stagger, inView, scroll } from "motion";
+  import { animate, stagger, inView } from "motion";
 
   animate("body", { opacity: [0.5, 1] }, { duration: 0.5 });
 
@@ -331,23 +331,6 @@ import ScrollToTop from "../components/ScrollToTop.astro";
         duration: 0.6,
       },
     );
-  });
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const element = document.querySelector(".parallaxelement");
-    if (!element) return;
-
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      scroll(animate(element, { y: [0, 300] }), {
-        target: element,
-        offset: ["start end", "end start"],
-      });
-    } else {
-      scroll(animate(element, { y: [0, 60] }), {
-        target: element,
-        offset: ["start end", "end start"],
-      });
-    }
   });
 </script>
 

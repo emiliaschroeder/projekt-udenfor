@@ -505,30 +505,6 @@ import ScrollToTop from "../components/ScrollToTop.astro";
   <PopUp />
 </MainLayout>
 
-<script>
-  /* Import af Motion One bibliotek */
-  import { animate, scroll } from "motion";
-
-  animate("body", { opacity: [0.5, 1] }, { duration: 0.5 });
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const element = document.querySelector(".parallaxelement");
-    if (!element) return;
-
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      scroll(animate(element, { y: [0, 300] }), {
-        target: element,
-        offset: ["start end", "end start"],
-      });
-    } else {
-      scroll(animate(element, { y: [0, 60] }), {
-        target: element,
-        offset: ["start end", "end start"],
-      });
-    }
-  });
-</script>
-
 <script is:inline>
   const observer = new IntersectionObserver(
     (entries) => {
